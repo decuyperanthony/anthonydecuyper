@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { useI18n } from "@/lib/i18n";
+import { isNavLinkActive } from "@/lib/navigation";
 import { ROUTES } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 
@@ -20,8 +21,7 @@ export const NavLink = ({ href, navKey, mobile, onClick }: NavLinkProps) => {
   const { t } = useI18n();
   const pathname = usePathname();
 
-  const isActive =
-    href === ROUTES.home ? pathname === ROUTES.home : pathname.startsWith(href);
+  const isActive = isNavLinkActive(href, pathname, ROUTES.home);
 
   return (
     <Link

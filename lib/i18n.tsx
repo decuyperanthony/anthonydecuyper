@@ -110,4 +110,10 @@ export const useI18n = (): I18nContextType => {
   return context;
 };
 
-export { SUPPORTED_LOCALES, LOCALE_LABELS };
+export {
+  SUPPORTED_LOCALES,
+  LOCALE_LABELS,
+  isValidLocale,
+  getBrowserLocale,
+  getStoredLocale,
+};
