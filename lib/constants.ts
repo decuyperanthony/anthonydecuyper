@@ -2,21 +2,20 @@ export const skills = {
   frontend: [
     "React",
     "Next.js",
+    "React Native",
     "TypeScript",
     "Tailwind CSS",
-    "Zustand",
-    "React Query",
-    "Zod",
+    "shadcn/ui",
   ],
-  backend: ["Node.js", "Express", "PostgreSQL", "Prisma", "REST APIs"],
-  tools: ["Git", "GitHub Actions", "Vercel", "Docker", "Figma"],
+  backend: ["Node.js", "tRPC", "PostgreSQL", "REST APIs", "AWS"],
+  tools: ["Turborepo", "Git", "GitHub Actions", "Vercel", "Docker", "Figma"],
   practices: [
-    "TDD",
-    "Code Review",
-    "CI/CD",
-    "Agile/Scrum",
+    "Architecture",
+    "Technical Strategy",
+    "Hiring",
+    "Mentoring",
     "Design Systems",
-    "A11y",
+    "Code Review",
   ],
 };
 
@@ -24,38 +23,67 @@ export const experience = [
   {
     company: "Germen",
     role: {
-      en: "Frontend Lead / Acting Head of Frontend",
-      fr: "Lead Frontend / Head of Frontend par intérim",
+      en: "Frontend Lead",
+      fr: "Lead Frontend",
     },
     period: { start: "2021", end: null },
     description: {
-      en: "Leading frontend architecture and development for insurance subscription platforms. Building scalable React applications with TypeScript, implementing design systems, and mentoring junior developers.",
-      fr: "Direction de l'architecture et du développement frontend pour des plateformes de souscription d'assurance. Création d'applications React scalables avec TypeScript, implémentation de design systems et mentorat de développeurs juniors.",
+      en: "Led frontend architecture across multiple insurance platforms. Migrated monolithic CRA + Redux codebase to Turborepo monorepo. Built a shared design system and delivered a React Native mobile app for insurance subscription journeys.",
+      fr: "Direction de l'architecture frontend sur plusieurs plateformes d'assurance. Migration d'une codebase monolithique CRA + Redux vers un monorepo Turborepo. Conception d'un design system partagé et développement d'une application mobile React Native pour les parcours de souscription.",
     },
     technologies: [
+      "TypeScript",
       "React",
       "Next.js",
-      "TypeScript",
+      "React Native",
+      "Turborepo",
       "Tailwind CSS",
-      "Zustand",
-      "React Query",
+      "shadcn/ui",
+      "tRPC",
     ],
   },
   {
-    company: "Previous Company",
+    company: "Studio Ambiant",
     role: {
       en: "Full Stack Developer",
       fr: "Développeur Full Stack",
     },
-    period: { start: "2019", end: "2021" },
+    period: { start: "2022", end: "2023" },
     description: {
-      en: "Developed and maintained web applications using React and Node.js. Collaborated with design teams to implement responsive user interfaces and RESTful APIs.",
-      fr: "Développement et maintenance d'applications web avec React et Node.js. Collaboration avec les équipes design pour implémenter des interfaces utilisateur responsives et des APIs RESTful.",
+      en: "Built end-to-end React/Node platform with back-office CMS. Designed PostgreSQL schema and REST APIs, delivering features from database to production UI.",
+      fr: "Développement d'une plateforme React/Node complète avec CMS back-office. Conception du schéma PostgreSQL et des APIs REST, livraison de fonctionnalités end-to-end.",
     },
-    technologies: ["React", "Node.js", "Express", "PostgreSQL", "Docker"],
+    technologies: ["TypeScript", "React", "Node.js", "PostgreSQL", "REST APIs"],
+  },
+  {
+    company: "Collect For Good",
+    role: {
+      en: "Full Stack Developer (Volunteer)",
+      fr: "Développeur Full Stack (Bénévole)",
+    },
+    period: { start: "2022", end: "2022" },
+    description: {
+      en: "Built humanitarian logistics platform coordinating donation collection and transport to Ukraine border during active crisis response.",
+      fr: "Contribution à une plateforme logistique humanitaire pour coordonner la collecte et le transport de dons vers la frontière ukrainienne.",
+    },
+    technologies: ["Next.js", "TypeScript", "PostgreSQL"],
+  },
+  {
+    company: "Tanke",
+    role: {
+      en: "Full Stack Developer",
+      fr: "Développeur Full Stack",
+    },
+    period: { start: "2020", end: "2021" },
+    description: {
+      en: "Developed React applications and Node APIs powering influencer marketing campaigns for major brands. Owned full stack delivery in fast-paced agency environment.",
+      fr: "Développement d'applications React et APIs Node pour des campagnes marketing d'influence pour grandes marques. Responsabilité full stack en environnement agence.",
+    },
+    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "REST APIs"],
   },
 ];
 
+// TODO: Replace with real projects data
 export const projects = [
   {
     title: "Insurance Platform",
@@ -87,16 +115,35 @@ export const contact = {
 
 export const education = [
   {
-    institution: "University",
+    institution: "École O'Clock",
     degree: {
-      en: "Computer Science",
-      fr: "Informatique",
+      en: "Web Developer Certification",
+      fr: "Titre Professionnel Développeur Web et Web Mobile (Niveau III)",
     },
-    period: { start: "2015", end: "2018" },
+    period: { start: "2019", end: "2020" },
+  },
+  {
+    institution: "Opquast",
+    degree: {
+      en: "Web Quality Best Practices Certification",
+      fr: "Certification Qualité Web",
+    },
+    period: { start: "2019", end: "2019" },
+  },
+  {
+    institution: "Université Paris Descartes",
+    degree: {
+      en: "Bachelor's in Mathematics & Computer Science",
+      fr: "Licence Mathématiques-Informatique",
+    },
+    period: { start: "2008", end: "2011" },
   },
 ];
 
 export const languages = [
   { name: { en: "French", fr: "Français" }, level: { en: "Native", fr: "Natif" } },
-  { name: { en: "English", fr: "Anglais" }, level: { en: "Fluent", fr: "Courant" } },
+  {
+    name: { en: "English", fr: "Anglais" },
+    level: { en: "Professional", fr: "Professionnel" },
+  },
 ];
