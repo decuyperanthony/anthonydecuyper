@@ -12,7 +12,7 @@ export const Hero = () => {
   const { t } = useI18n();
 
   return (
-    <section className="py-20 sm:py-32">
+    <section className="py-12 sm:py-20 lg:py-32">
       <div className="space-y-6">
         <Typography
           variant="muted"

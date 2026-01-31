@@ -14,7 +14,7 @@ export const metadata = {
 
 const CVPage = () => (
   <PageLayout className="print:py-0" hideFooterOnPrint>
-    <div className="mb-8 flex items-start justify-between gap-4 print:hidden">
+    <div className="mb-4 flex items-start justify-between gap-4 print:hidden sm:mb-8">
       <CVHeader />
       <CVDownload />
     </div>

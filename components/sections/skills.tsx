@@ -16,7 +16,7 @@ export const Skills = () => {
   ];
 
   return (
-    <section className="space-y-8 py-16">
+    <section className="space-y-6 py-10 sm:space-y-8 sm:py-16">
       <Typography variant="h3" as="h2">
         {t.skills.title}
       </Typography>

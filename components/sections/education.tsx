@@ -8,8 +8,8 @@ export const Education = () => {
   const { locale, t } = useI18n();
 
   return (
-    <section className="space-y-12 py-16">
-      <div className="space-y-8">
+    <section className="space-y-8 py-10 sm:space-y-12 sm:py-16">
+      <div className="space-y-6 sm:space-y-8">
         <Typography variant="h3" as="h2">
           {t.cv.education}
         </Typography>
