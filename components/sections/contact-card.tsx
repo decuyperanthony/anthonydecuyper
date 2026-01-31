@@ -20,13 +20,13 @@ export const ContactCard = () => {
       icon: Github,
       label: t.contact.github,
       href: contact.github,
-      value: "github.com/anthonydecuyper",
+      value: "github.com/decuyperanthony",
     },
     {
       icon: Linkedin,
       label: t.contact.linkedin,
       href: contact.linkedin,
-      value: "linkedin.com/in/anthonydecuyper",
+      value: "linkedin.com/in/anthony-de-cuyper",
     },
   ];
 
