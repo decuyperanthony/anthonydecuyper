@@ -366,31 +366,127 @@ export const projects: Project[] = [
     slug: "dealbreaker",
     title: "Dealbreaker",
     oneLiner: {
-      en: "TODO: Add project description", // TODO: Add description
-      fr: "TODO: Ajouter la description du projet", // TODO: Add description
+      en: "Advisor tool to optimize savings/retirement advice: contract analysis, portfolio comparison, offer generation, and meeting-ready exports.",
+      fr: "Outil conseiller pour optimiser le conseil en épargne/retraite : analyse de contrats, comparaison de portefeuilles, génération d'offres et exports prêts pour RDV.",
+    },
+    category: "advisor-tools",
+    role: {
+      en: "Frontend Lead — end-to-end UI ownership, design system, API integration",
+      fr: "Lead Frontend — ownership UI end-to-end, design system, intégration API",
+    },
+    timeframe: "2024–Present",
+    stack: ["Next.js", "React", "TypeScript", "tRPC", "PostgreSQL", "Drizzle", "Turborepo", "Tailwind", "shadcn/ui"],
+    highlights: {
+      en: [
+        "Owned entire frontend end-to-end: UI/UX design participation, implementation, and production-grade delivery.",
+        "Built reusable component library and maintained strong engineering standards across monorepo.",
+        "Integrated frontend with AI-powered backend engine for automated contract analysis and offer generation.",
+      ],
+      fr: [
+        "Ownership frontend complet : participation au design UI/UX, implémentation et livraison production-grade.",
+        "Construction d'une bibliothèque de composants réutilisables et maintien de standards d'ingénierie élevés dans le monorepo.",
+        "Intégration du frontend avec le moteur backend alimenté par IA pour l'analyse automatique des contrats et la génération d'offres.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Advisor tool — authentication required",
+      fr: "Outil conseiller — authentification requise",
+    },
+    links: { live: "https://dealbreaker.germen.io/", repo: null },
+  },
+  {
+    slug: "tribz",
+    title: "Tribz",
+    oneLiner: {
+      en: "Influencer marketing platform connecting brands with content creators — full-stack PWA with social media scraping.",
+      fr: "Plateforme de marketing d'influence connectant marques et créateurs de contenu — PWA full-stack avec scraping réseaux sociaux.",
+    },
+    category: "platform",
+    role: {
+      en: "Solo Full-stack Developer — end-to-end ownership",
+      fr: "Développeur Full-stack Solo — ownership end-to-end",
+    },
+    timeframe: "2021",
+    stack: ["React", "Redux", "Node.js", "Express", "PostgreSQL", "MongoDB", "Docker", "Jenkins"],
+    highlights: {
+      en: [
+        "Built complete platform solo: frontend, backend APIs, database design, and deployment pipeline.",
+        "Implemented social media scraping for YouTube, Facebook, and Instagram to aggregate influencer metrics.",
+        "Delivered PWA with campaign management, influencer discovery, and brand collaboration workflows.",
+      ],
+      fr: [
+        "Construction de la plateforme complète en solo : frontend, APIs backend, design de base de données et pipeline de déploiement.",
+        "Implémentation du scraping réseaux sociaux pour YouTube, Facebook et Instagram pour agréger les métriques influenceurs.",
+        "Livraison d'une PWA avec gestion de campagnes, découverte d'influenceurs et workflows de collaboration marques.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Internal platform — no longer active",
+      fr: "Plateforme interne — plus active",
+    },
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "studio-ambiant",
+    title: "Studio Ambiant",
+    oneLiner: {
+      en: "Showcase website and back-office for a culinary production studio — full-stack with reservation management.",
+      fr: "Site vitrine et back-office pour un studio de production culinaire — full-stack avec gestion des réservations.",
     },
     category: "personal",
     role: {
-      en: "TODO: Add role", // TODO: Add role
-      fr: "TODO: Ajouter le rôle", // TODO: Add role
+      en: "Solo Full-stack Developer — end-to-end ownership",
+      fr: "Développeur Full-stack Solo — ownership end-to-end",
     },
-    timeframe: "TODO", // TODO: Add timeframe
-    stack: ["TODO"], // TODO: Add stack
+    timeframe: "2022–2023",
+    stack: ["TypeScript", "React", "Node.js", "Express", "MongoDB", "Docker", "Material UI"],
     highlights: {
       en: [
-        "TODO: Add highlight 1", // TODO
-        "TODO: Add highlight 2", // TODO
-        "TODO: Add highlight 3", // TODO
+        "Built showcase website presenting the studio, team, and culinary content catalog.",
+        "Developed back-office CMS for content management and reservation booking system.",
+        "Delivered full-stack solution from database schema to production deployment.",
       ],
       fr: [
-        "TODO: Ajouter point clé 1", // TODO
-        "TODO: Ajouter point clé 2", // TODO
-        "TODO: Ajouter point clé 3", // TODO
+        "Construction du site vitrine présentant le studio, l'équipe et le catalogue de contenus culinaires.",
+        "Développement du back-office CMS pour la gestion de contenu et système de réservation.",
+        "Livraison d'une solution full-stack du schéma de base de données au déploiement en production.",
       ],
     },
     access: "public",
     accessNote: null,
-    links: { live: null, repo: null }, // TODO: Add links if available
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "boutique-des-anges",
+    title: "Boutique des Anges",
+    oneLiner: {
+      en: "Showcase website for a Parisian boutique in Montmartre — WordPress/Elementor.",
+      fr: "Site vitrine pour une boutique parisienne à Montmartre — WordPress/Elementor.",
+    },
+    category: "personal",
+    role: {
+      en: "Web Developer — design and implementation",
+      fr: "Développeur Web — design et implémentation",
+    },
+    timeframe: "2019–2020",
+    stack: ["WordPress", "Elementor"],
+    highlights: {
+      en: [
+        "Designed and built showcase website for family-owned Parisian boutique.",
+        "Implemented responsive design with product catalog and store information.",
+        "Configured hosting, domain, and ongoing maintenance.",
+      ],
+      fr: [
+        "Conception et construction du site vitrine pour une boutique familiale parisienne.",
+        "Implémentation d'un design responsive avec catalogue produits et informations boutique.",
+        "Configuration de l'hébergement, du domaine et maintenance continue.",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: { live: null, repo: null },
   },
 ];
 
