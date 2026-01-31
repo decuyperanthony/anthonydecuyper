@@ -24,7 +24,9 @@ export const LangToggle = () => {
       <DropdownMenuContent align="end">
         {SUPPORTED_LOCALES.map((loc) => (
           <DropdownMenuItem key={loc} onClick={() => setLocale(loc)}>
-            {locale === loc && <Check className="size-4" />}
+            <Check
+              className={locale === loc ? "opacity-100" : "opacity-0"}
+            />
             {LOCALE_LABELS[loc]}
           </DropdownMenuItem>
         ))}
