@@ -35,9 +35,17 @@
   },
   "projects": {
     "title": "Projects",
-    "description": "A selection of projects I've worked on",
+    "description": "A selection of professional and personal projects I've worked on",
     "viewProject": "View Project",
-    "viewCode": "View Code"
+    "viewCode": "View Code",
+    "categories": {
+      "platform": "Platform",
+      "advisor-tools": "Advisor Tools",
+      "mobile": "Mobile",
+      "partner": "Partner",
+      "volunteer": "Volunteer",
+      "personal": "Personal"
+    }
   },
   "contact": {
     "title": "Get in Touch",
