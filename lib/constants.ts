@@ -267,6 +267,39 @@ export const projects: Project[] = [
     links: { live: null, repo: null },
   },
   {
+    slug: "platform-migration-vite",
+    title: "Platform Migration to Vite",
+    oneLiner: {
+      en: "Major migration of subscription journeys, customer space, and back-office apps from legacy CRA/Redux to modern Vite + React Query stack.",
+      fr: "Migration majeure des parcours de souscription, espace client et apps back-office de CRA/Redux legacy vers stack moderne Vite + React Query.",
+    },
+    category: "platform",
+    role: {
+      en: "Frontend Lead — migration strategy, architecture, delivery",
+      fr: "Lead Frontend — stratégie de migration, architecture, delivery",
+    },
+    timeframe: "2023–2024",
+    stack: ["TypeScript", "React", "Vite", "React Query", "Tailwind", "tRPC"],
+    highlights: {
+      en: [
+        "Led migration of subscription journeys from CRA + Redux to Vite + React Query for improved performance and DX.",
+        "Rebuilt customer space with modern patterns: server state management, optimistic updates, and better caching.",
+        "Migrated back-office manager tools while ensuring zero downtime and feature parity.",
+      ],
+      fr: [
+        "Pilotage de la migration des parcours de souscription de CRA + Redux vers Vite + React Query pour de meilleures performances et DX.",
+        "Refonte de l'espace client avec patterns modernes : gestion d'état serveur, mises à jour optimistes, meilleur caching.",
+        "Migration des outils gestionnaire back-office sans interruption de service et avec parité fonctionnelle.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Production system — authentication required",
+      fr: "Système en production — authentification requise",
+    },
+    links: { live: null, repo: null },
+  },
+  {
     slug: "generali-fonds-miroirs",
     title: "Generali Module Fonds Miroirs",
     oneLiner: {
