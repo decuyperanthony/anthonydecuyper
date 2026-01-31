@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { contact } from "@/lib/constants";
 import { useI18n } from "@/lib/i18n";
 
+const getDisplayUrl = (url: string) => url.replace(/^https?:\/\/(www\.)?/, "");
+
 export const ContactCard = () => {
   const { t } = useI18n();
 
@@ -20,13 +22,13 @@ export const ContactCard = () => {
       icon: Github,
       label: t.contact.github,
       href: contact.github,
-      value: "github.com/decuyperanthony",
+      value: getDisplayUrl(contact.github),
     },
     {
       icon: Linkedin,
       label: t.contact.linkedin,
       href: contact.linkedin,
-      value: "linkedin.com/in/anthony-de-cuyper",
+      value: getDisplayUrl(contact.linkedin),
     },
   ];
 
