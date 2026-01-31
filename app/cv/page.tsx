@@ -1,5 +1,11 @@
 import { Footer, Header, PageContainer } from "@/components/layout";
-import { CVHeader, Education, Experience, Skills } from "@/components/sections";
+import {
+  CVDownload,
+  CVHeader,
+  Education,
+  Experience,
+  Skills,
+} from "@/components/sections";
 
 export const metadata = {
   title: "Resume",
@@ -9,9 +15,15 @@ export const metadata = {
 const CVPage = () => (
   <div className="flex min-h-screen flex-col">
     <Header />
-    <main className="flex-1 print:pt-0">
+    <main className="flex-1 py-12 print:py-0">
       <PageContainer>
-        <CVHeader />
+        <div className="mb-8 flex items-start justify-between gap-4 print:hidden">
+          <CVHeader />
+          <CVDownload />
+        </div>
+        <div className="hidden print:block">
+          <CVHeader />
+        </div>
         <Experience />
         <Skills />
         <Education />
