@@ -1,19 +1,23 @@
+"use client";
+
 import { PageLayout } from "@/components/layout";
 import { ProjectCard } from "@/components/sections";
 import { projects } from "@/lib/constants";
-
-export const metadata = {
-  title: "Projects",
-  description: "A selection of projects",
-};
+import { StaggerContainer, StaggerItem } from "@/components/motion";
 
 const ProjectsPage = () => (
   <PageLayout titleKey="projects" descriptionKey="projects">
-    <div className="grid gap-6 lg:grid-cols-2">
+    <StaggerContainer
+      className="grid gap-6 lg:grid-cols-2"
+      staggerDelay={0.1}
+      delayChildren={0.2}
+    >
       {projects.map((project) => (
-        <ProjectCard key={project.slug} {...project} />
+        <StaggerItem key={project.slug}>
+          <ProjectCard {...project} />
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerContainer>
   </PageLayout>
 );
 
