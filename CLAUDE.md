@@ -43,7 +43,26 @@ content/
 ### i18n
 - Simple client-side i18n with localStorage persistence
 - `useI18n()` hook returns `{ locale, t, setLocale }`
-- Content in `content/en.json` and `content/fr.json`
+- Single source of truth in `lib/i18n.tsx`
+
+To add a new language (e.g., Spanish):
+1. Create `content/es.json` (copy from `en.json`)
+2. In `lib/i18n.tsx`:
+   ```ts
+   import esContent from "@/content/es.json";
+
+   const translations = {
+     en: enContent,
+     fr: frContent satisfies Translations,
+     es: esContent satisfies Translations,  // add
+   } as const;
+
+   const LOCALE_LABELS = {
+     en: "EN",
+     fr: "FR",
+     es: "ES",  // add
+   } satisfies Record<Locale, string>;
+   ```
 
 ### Components
 - shadcn/ui components in `components/ui/` - regenerate with `pnpm dlx shadcn@latest add <component>`
