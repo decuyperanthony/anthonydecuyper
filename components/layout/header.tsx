@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 
@@ -16,8 +15,8 @@ import {
 } from "@/components/ui/sheet";
 import { useI18n } from "@/lib/i18n";
 import { ROUTES } from "@/lib/routes";
-import { cn } from "@/lib/utils";
 
+import { NavLink } from "./nav-link";
 import { PageContainer } from "./page-container";
 
 const navItems = [
@@ -29,11 +28,7 @@ const navItems = [
 
 export const Header = () => {
   const { t } = useI18n();
-  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-
-  const getIsActive = (href: string) =>
-    href === ROUTES.home ? pathname === ROUTES.home : pathname.startsWith(href);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
@@ -50,18 +45,7 @@ export const Header = () => {
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                  getIsActive(item.href)
-                    ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                )}
-              >
-                {t.nav[item.key]}
-              </Link>
+              <NavLink key={item.href} href={item.href} navKey={item.key} />
             ))}
           </nav>
 
@@ -93,19 +77,13 @@ export const Header = () => {
               </SheetHeader>
               <nav className="flex flex-col gap-2 px-4">
                 {navItems.map((item) => (
-                  <Link
+                  <NavLink
                     key={item.href}
                     href={item.href}
+                    navKey={item.key}
+                    mobile
                     onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "rounded-md px-3 py-2 text-base font-medium transition-colors",
-                      getIsActive(item.href)
-                        ? "bg-accent text-accent-foreground"
-                        : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                    )}
-                  >
-                    {t.nav[item.key]}
-                  </Link>
+                  />
                 ))}
               </nav>
             </SheetContent>

@@ -7,7 +7,7 @@ import { useI18n } from "@/lib/i18n";
 import { ROUTES } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 
-import { type NavKey } from "./nav-items";
+type NavKey = "home" | "cv" | "projects" | "contact";
 
 type NavLinkProps = {
   href: string;
