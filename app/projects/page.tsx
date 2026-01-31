@@ -10,7 +10,7 @@ export const metadata = {
 const ProjectsPage = () => (
   <div className="flex min-h-screen flex-col">
     <Header />
-    <main className="flex-1">
+    <main className="flex-1 py-12">
       <PageContainer>
         <PageTitle titleKey="projects" descriptionKey="projects" />
         <div className="grid gap-6 lg:grid-cols-2">

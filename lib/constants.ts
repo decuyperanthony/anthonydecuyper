@@ -83,7 +83,7 @@ export const experience = [
   },
 ];
 
-export type ProjectCategory = "platform" | "advisor-tools" | "mobile" | "partner" | "volunteer";
+export type ProjectCategory = "platform" | "advisor-tools" | "mobile" | "partner" | "volunteer" | "personal";
 export type ProjectAccess = "public" | "restricted" | "redacted";
 
 export type Project = {
@@ -101,6 +101,39 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "polyseme-v1",
+    title: "POLYSEME V1",
+    oneLiner: {
+      en: "First major platform refonte: subscription journeys, customer space, and back-office manager tools for regulated insurance products.",
+      fr: "Première refonte majeure de la plateforme : parcours de souscription, espace client et outils gestionnaire pour les produits d'assurance réglementés.",
+    },
+    category: "platform",
+    role: {
+      en: "Frontend Developer — delivery, UI implementation, cross-team collaboration",
+      fr: "Développeur Frontend — delivery, implémentation UI, collaboration inter-équipes",
+    },
+    timeframe: "2021–2022",
+    stack: ["TypeScript", "React", "Redux", "Styled Components", "REST APIs"],
+    highlights: {
+      en: [
+        "Built subscription journeys for life insurance and retirement savings products with regulatory compliance.",
+        "Developed customer space for contract consultation, account management, and document access.",
+        "Implemented back-office manager tools for operations, validations, and customer support workflows.",
+      ],
+      fr: [
+        "Construction des parcours de souscription pour l'assurance vie et l'épargne retraite avec conformité réglementaire.",
+        "Développement de l'espace client pour consultation des contrats, gestion de compte et accès aux documents.",
+        "Implémentation des outils gestionnaire pour les opérations, validations et workflows support client.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Production system — authentication required",
+      fr: "Système en production — authentification requise",
+    },
+    links: { live: null, repo: null },
+  },
   {
     slug: "polyseme-v2",
     title: "POLYSEME V2",
@@ -201,11 +234,11 @@ export const projects: Project[] = [
     links: { live: null, repo: null },
   },
   {
-    slug: "react-native-customer-app",
-    title: "React Native Customer App",
+    slug: "garance-mobile-app",
+    title: "Garance Mobile App",
     oneLiner: {
-      en: "Mobile customer space for account access and operations in a regulated production environment.",
-      fr: "Espace client mobile pour l'accès au compte et les opérations dans un environnement de production réglementé.",
+      en: "Customer mobile app for Garance: account management, contract consultation, and regulated insurance operations (risk changes, management changes, redemptions).",
+      fr: "Application mobile client Garance : gestion de compte, consultation des contrats et opérations d'assurance réglementées (changement de risque, changement de gestion, rachats).",
     },
     category: "mobile",
     role: {
@@ -213,17 +246,17 @@ export const projects: Project[] = [
       fr: "Lead Frontend — delivery mobile, qualité UI, production-ready",
     },
     timeframe: "2023–Present",
-    stack: ["TypeScript", "React Native", "React", "API integrations"],
+    stack: ["TypeScript", "React Native", "React", "tRPC", "API integrations"],
     highlights: {
       en: [
-        "Delivered mobile experiences aligned with the web platform while keeping shared UX standards.",
-        "Handled production constraints (authentication, privacy, sensitive data) with a reliability-first approach.",
-        "Improved maintainability through reusable components and consistent patterns.",
+        "Built complete customer space: account overview, contract details, and document access.",
+        "Implemented regulated operations: risk profile changes, management option changes, partial/total redemptions.",
+        "Delivered consistent UX aligned with web platform while respecting mobile-specific constraints.",
       ],
       fr: [
-        "Livraison d'expériences mobiles alignées avec la plateforme web tout en gardant des standards UX partagés.",
-        "Gestion des contraintes de production (auth, privacy, données sensibles) avec une approche reliability-first.",
-        "Amélioration de la maintenabilité via composants réutilisables et patterns cohérents.",
+        "Construction de l'espace client complet : vue d'ensemble du compte, détails des contrats, accès aux documents.",
+        "Implémentation des opérations réglementées : changement de profil de risque, changement d'options de gestion, rachats partiels/totaux.",
+        "Livraison d'une UX cohérente avec la plateforme web tout en respectant les contraintes spécifiques au mobile.",
       ],
     },
     access: "restricted",
@@ -295,6 +328,36 @@ export const projects: Project[] = [
     access: "public",
     accessNote: null,
     links: { live: null, repo: null },
+  },
+  {
+    slug: "dealbreaker",
+    title: "Dealbreaker",
+    oneLiner: {
+      en: "TODO: Add project description", // TODO: Add description
+      fr: "TODO: Ajouter la description du projet", // TODO: Add description
+    },
+    category: "personal",
+    role: {
+      en: "TODO: Add role", // TODO: Add role
+      fr: "TODO: Ajouter le rôle", // TODO: Add role
+    },
+    timeframe: "TODO", // TODO: Add timeframe
+    stack: ["TODO"], // TODO: Add stack
+    highlights: {
+      en: [
+        "TODO: Add highlight 1", // TODO
+        "TODO: Add highlight 2", // TODO
+        "TODO: Add highlight 3", // TODO
+      ],
+      fr: [
+        "TODO: Ajouter point clé 1", // TODO
+        "TODO: Ajouter point clé 2", // TODO
+        "TODO: Ajouter point clé 3", // TODO
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: { live: null, repo: null }, // TODO: Add links if available
   },
 ];
 
