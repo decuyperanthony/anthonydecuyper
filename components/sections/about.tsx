@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useI18n } from "@/lib/i18n";
 
 export const About = () => {
@@ -7,12 +8,12 @@ export const About = () => {
 
   return (
     <section className="space-y-6 py-16">
-      <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+      <Typography variant="h3" as="h2">
         {t.about.title}
-      </h2>
-      <p className="max-w-3xl leading-relaxed text-muted-foreground">
+      </Typography>
+      <Typography variant="body-large" className="max-w-3xl leading-relaxed">
         {t.about.bio}
-      </p>
+      </Typography>
     </section>
   );
 };

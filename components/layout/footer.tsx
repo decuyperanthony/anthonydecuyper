@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useI18n } from "@/lib/i18n";
 
 import { PageContainer } from "./page-container";
@@ -12,9 +13,9 @@ export const Footer = () => {
     <footer className="border-t border-border py-8">
       <PageContainer>
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-sm text-muted-foreground">
+          <Typography variant="muted">
             &copy; {currentYear} {t.meta.name}. {t.footer.rights}
-          </p>
+          </Typography>
         </div>
       </PageContainer>
     </footer>

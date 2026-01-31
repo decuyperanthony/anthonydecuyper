@@ -80,7 +80,7 @@ export const projects = [
 ];
 
 export const contact = {
-  email: "contact@anthonydecuyper.com",
+  email: "decuyperanthony@gmail.com",
   github: "https://github.com/decuyperanthony",
   linkedin: "https://www.linkedin.com/in/anthony-de-cuyper/",
 };

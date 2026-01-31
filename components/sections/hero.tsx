@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Typography } from "@/components/ui/typography";
 import { useI18n } from "@/lib/i18n";
 import { ROUTES } from "@/lib/routes";
 
@@ -13,18 +14,31 @@ export const Hero = () => {
   return (
     <section className="py-20 sm:py-32">
       <div className="space-y-6">
-        <p className="animate-fade-in text-muted-foreground opacity-0">
+        <Typography
+          variant="muted"
+          className="animate-fade-in opacity-0"
+        >
           {t.hero.greeting}
-        </p>
-        <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-foreground opacity-0 animation-delay-100 sm:text-5xl lg:text-6xl">
+        </Typography>
+        <Typography
+          variant="h1"
+          as="h1"
+          className="animate-fade-in-up opacity-0 animation-delay-100 sm:text-5xl lg:text-6xl"
+        >
           {t.meta.name}
-        </h1>
-        <p className="animate-fade-in-up text-xl text-muted-foreground opacity-0 animation-delay-200 sm:text-2xl">
+        </Typography>
+        <Typography
+          variant="lead"
+          className="animate-fade-in-up opacity-0 animation-delay-200 sm:text-2xl"
+        >
           {t.meta.role} &mdash; {t.meta.tagline}
-        </p>
-        <p className="animate-fade-in-up max-w-2xl text-muted-foreground opacity-0 animation-delay-300">
+        </Typography>
+        <Typography
+          variant="body-large"
+          className="animate-fade-in-up max-w-2xl opacity-0 animation-delay-300"
+        >
           {t.hero.description}
-        </p>
+        </Typography>
         <div className="animate-fade-in-up flex flex-wrap gap-4 pt-4 opacity-0 animation-delay-400">
           <Button asChild>
             <Link href={ROUTES.cv}>

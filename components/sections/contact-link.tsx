@@ -3,6 +3,7 @@
 import { type LucideIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Typography } from "@/components/ui/typography";
 
 type ContactLinkProps = {
   icon: LucideIcon;
@@ -20,8 +21,12 @@ export const ContactLink = ({ icon: Icon, label, href, value }: ContactLinkProps
     <a href={href} target="_blank" rel="noopener noreferrer">
       <Icon className="size-5 text-muted-foreground" />
       <div className="flex flex-col items-start">
-        <span className="text-sm font-medium">{label}</span>
-        <span className="text-sm text-muted-foreground">{value}</span>
+        <Typography variant="body-small" as="span" className="font-medium">
+          {label}
+        </Typography>
+        <Typography variant="muted" as="span">
+          {value}
+        </Typography>
       </div>
     </a>
   </Button>
