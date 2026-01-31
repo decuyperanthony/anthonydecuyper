@@ -1,24 +1,40 @@
 "use client";
 
-import { useI18n } from "@/lib/i18n";
+import { useI18n, SUPPORTED_LOCALES, LOCALE_LABELS } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const LangToggle = () => {
   const { locale, setLocale } = useI18n();
 
-  const toggleLocale = () => {
-    setLocale(locale === "en" ? "fr" : "en");
-  };
-
   return (
-    <Button
-      variant="ghost"
-      size="sm"
-      onClick={toggleLocale}
-      aria-label="Toggle language"
-      className="font-medium"
-    >
-      {locale === "en" ? "FR" : "EN"}
-    </Button>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          variant="ghost"
+          size="sm"
+          aria-label="Select language"
+          className="font-medium"
+        >
+          {LOCALE_LABELS[locale]}
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        {SUPPORTED_LOCALES.map((loc) => (
+          <DropdownMenuItem
+            key={loc}
+            onClick={() => setLocale(loc)}
+            className={locale === loc ? "font-semibold" : ""}
+          >
+            {LOCALE_LABELS[loc]}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
