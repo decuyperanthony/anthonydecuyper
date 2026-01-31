@@ -44,10 +44,10 @@ export const PageLayout = ({
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className={cn("flex-1 py-12", className)}>
+      <main className={cn("flex-1 py-6 sm:py-12", className)}>
         <PageContainer>
           {titleKey && (
-            <div className="space-y-4 py-12">
+            <div className="space-y-3 py-6 sm:space-y-4 sm:py-12">
               <Typography variant="h2" as="h1" className="sm:text-4xl">
                 {titleMap[titleKey]}
               </Typography>

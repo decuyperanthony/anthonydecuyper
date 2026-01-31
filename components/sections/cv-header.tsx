@@ -9,7 +9,7 @@ export const CVHeader = () => {
   return (
     <>
       <div className="print:hidden">
-        <div className="py-12">
+        <div className="py-6 sm:py-12">
           <Typography variant="h2" as="h1" className="sm:text-4xl">
             {t.cv.title}
           </Typography>

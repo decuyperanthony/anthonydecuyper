@@ -7,7 +7,7 @@ export const About = () => {
   const { t } = useI18n();
 
   return (
-    <section className="space-y-6 py-16">
+    <section className="space-y-4 py-10 sm:space-y-6 sm:py-16">
       <Typography variant="h3" as="h2">
         {t.about.title}
       </Typography>
