@@ -2,7 +2,7 @@
 
 import { ExternalLink, Github, Lock, ShieldOff } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
+import { Badge, type BadgeVariant } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -17,19 +17,13 @@ import type { Project, ProjectCategory } from "@/lib/constants";
 
 type ProjectCardProps = Project;
 
-const categoryColors: Record<ProjectCategory, string> = {
-  platform:
-    "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
-  "advisor-tools":
-    "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
-  mobile:
-    "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20",
-  partner:
-    "bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20",
-  volunteer:
-    "bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20",
-  personal:
-    "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20",
+const categoryToVariant: Record<ProjectCategory, BadgeVariant> = {
+  platform: "platform",
+  "advisor-tools": "tools",
+  mobile: "mobile",
+  partner: "partner",
+  volunteer: "volunteer",
+  personal: "personal",
 };
 
 export const ProjectCard = ({
@@ -57,11 +51,7 @@ export const ProjectCard = ({
       <Card className="flex h-full flex-col transition-shadow duration-300 hover:shadow-lg dark:hover:shadow-primary/5">
         <CardHeader className="space-y-3">
           <div className="flex items-center justify-between gap-2">
-            <Badge
-              className={`text-xs font-medium ${categoryColors[category]}`}
-            >
-              {categoryLabel}
-            </Badge>
+            <Badge variant={categoryToVariant[category]}>{categoryLabel}</Badge>
             <span className="text-xs text-muted-foreground">{timeframe}</span>
           </div>
           <div>
@@ -87,7 +77,7 @@ export const ProjectCard = ({
               <Badge
                 key={tech}
                 variant="outline"
-                className="text-xs transition-colors hover:bg-primary/10"
+                className="transition-colors hover:bg-primary/10"
               >
                 {tech}
               </Badge>
