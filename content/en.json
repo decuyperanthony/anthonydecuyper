@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "name": "Anthony de Cuyper",
+    "role": "Head of Frontend",
+    "tagline": "Building complex regulated digital products"
+  },
+  "nav": {
+    "home": "Home",
+    "cv": "Resume",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "description": "Frontend engineering leader with 6+ years of experience building regulated digital products. Specializing in React, Next.js, and TypeScript.",
+    "cta": "View Resume",
+    "contact": "Get in Touch"
+  },
+  "about": {
+    "title": "About",
+    "bio": "I'm a passionate frontend engineer and technical leader with deep expertise in building scalable, user-centric applications. My journey has taken me from full-stack development to leading frontend teams, where I focus on architectural decisions, code quality, and developer experience. I thrive in regulated industries where precision and reliability are paramount."
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & DevOps",
+      "practices": "Practices"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "A selection of projects I've worked on",
+    "viewProject": "View Project",
+    "viewCode": "View Code"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "cv": {
+    "title": "Resume",
+    "download": "Download PDF",
+    "education": "Education",
+    "languages": "Languages"
+  }
+}

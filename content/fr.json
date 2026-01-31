@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "name": "Anthony de Cuyper",
+    "role": "Head of Frontend",
+    "tagline": "Conception de produits digitaux complexes et réglementés"
+  },
+  "nav": {
+    "home": "Accueil",
+    "cv": "CV",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "description": "Leader en ingénierie frontend avec plus de 6 ans d'expérience dans la création de produits digitaux réglementés. Spécialisé en React, Next.js et TypeScript.",
+    "cta": "Voir le CV",
+    "contact": "Me contacter"
+  },
+  "about": {
+    "title": "À propos",
+    "bio": "Je suis un ingénieur frontend passionné et leader technique avec une expertise approfondie dans la création d'applications scalables et centrées sur l'utilisateur. Mon parcours m'a mené du développement full-stack à la direction d'équipes frontend, où je me concentre sur les décisions architecturales, la qualité du code et l'expérience développeur. J'excelle dans les industries réglementées où la précision et la fiabilité sont primordiales."
+  },
+  "skills": {
+    "title": "Compétences & Technologies",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Outils & DevOps",
+      "practices": "Pratiques"
+    }
+  },
+  "experience": {
+    "title": "Expérience",
+    "present": "Présent"
+  },
+  "projects": {
+    "title": "Projets",
+    "description": "Une sélection de projets sur lesquels j'ai travaillé",
+    "viewProject": "Voir le projet",
+    "viewCode": "Voir le code"
+  },
+  "contact": {
+    "title": "Me contacter",
+    "description": "Je suis toujours ouvert à discuter de nouvelles opportunités, de projets intéressants, ou simplement d'échanger sur la technologie.",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  },
+  "cv": {
+    "title": "CV",
+    "download": "Télécharger PDF",
+    "education": "Formation",
+    "languages": "Langues"
+  }
+}
