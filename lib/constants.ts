@@ -83,27 +83,445 @@ export const experience = [
   },
 ];
 
-// TODO: Replace with real projects data
-export const projects = [
+export type ProjectCategory = "platform" | "advisor-tools" | "mobile" | "partner" | "volunteer" | "personal";
+export type ProjectAccess = "public" | "restricted" | "redacted";
+
+export type Project = {
+  slug: string;
+  title: string;
+  oneLiner: { en: string; fr: string };
+  category: ProjectCategory;
+  role: { en: string; fr: string };
+  timeframe: string;
+  stack: string[];
+  highlights: { en: string[]; fr: string[] };
+  access: ProjectAccess;
+  accessNote: { en: string; fr: string } | null;
+  links: { live: string | null; repo: string | null };
+};
+
+export const projects: Project[] = [
+  // === CURRENT / MOST RECENT ===
   {
-    title: "Insurance Platform",
-    description: {
-      en: "A comprehensive insurance subscription management platform handling complex regulatory workflows.",
-      fr: "Une plateforme complète de gestion de souscription d'assurance gérant des workflows réglementaires complexes.",
+    slug: "polyseme-v2",
+    title: "POLYSEME V2",
+    oneLiner: {
+      en: "Large-scale platform rebuild and modernization for regulated insurance & savings products.",
+      fr: "Refonte et modernisation à grande échelle d'une plateforme d'assurance et d'épargne réglementée.",
     },
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
-    url: null,
-    image: null,
+    category: "platform",
+    role: {
+      en: "Frontend Lead — architecture, standards, mentoring, delivery",
+      fr: "Lead Frontend — architecture, standards, mentorat, delivery",
+    },
+    timeframe: "2021–Present",
+    stack: ["TypeScript", "React", "Next.js", "Turborepo", "Tailwind", "shadcn/ui", "tRPC", "PostgreSQL", "AWS"],
+    highlights: {
+      en: [
+        "Rebuilt core product journeys and advisor workflows with a modern React/Next.js architecture.",
+        "Introduced a monorepo strategy with shared packages to improve consistency and maintainability across multiple apps.",
+        "Collaborated closely with Product and Compliance to design clear, regulated onboarding and subscription flows.",
+      ],
+      fr: [
+        "Refonte des parcours produits et workflows conseillers avec une architecture React/Next.js moderne.",
+        "Mise en place d'une stratégie monorepo avec packages partagés pour améliorer la cohérence et la maintenabilité.",
+        "Collaboration étroite avec Product et Compliance pour concevoir des parcours réglementés clairs.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Production system — authentication required",
+      fr: "Système en production — authentification requise",
+    },
+    links: { live: null, repo: null },
   },
   {
-    title: "Design System",
-    description: {
-      en: "A scalable component library built with React and Tailwind CSS, featuring comprehensive accessibility support.",
-      fr: "Une bibliothèque de composants scalable construite avec React et Tailwind CSS, avec un support complet de l'accessibilité.",
+    slug: "generali-fonds-miroirs",
+    title: "Generali Module Fonds Miroirs",
+    oneLiner: {
+      en: "AI-powered tool automating PEE/PERCOL collective transfer reports for Generali Épargne Salariale — built solo from scratch.",
+      fr: "Outil alimenté par IA automatisant les procès verbaux de transfert collectif PEE/PERCOL pour Generali Épargne Salariale — construit seul de A à Z.",
     },
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Storybook"],
-    url: null,
-    image: null,
+    category: "partner",
+    role: {
+      en: "Solo Full-stack Developer — end-to-end ownership, AI integration",
+      fr: "Développeur Full-stack Solo — ownership end-to-end, intégration IA",
+    },
+    timeframe: "2024",
+    stack: ["TypeScript", "React", "Next.js", "PostgreSQL", "AWS", "OpenAI"],
+    highlights: {
+      en: [
+        "Built complete application solo: frontend, authentication, database schema, and document generation.",
+        "Integrated AI to automatically extract company information from uploaded documents (PDF, Excel, images).",
+        "Automated fund mirror generation and export of ready-to-use regulatory documents.",
+      ],
+      fr: [
+        "Construction de l'application complète en solo : frontend, authentification, schéma de base de données et génération de documents.",
+        "Intégration de l'IA pour extraire automatiquement les informations entreprise des documents uploadés (PDF, Excel, images).",
+        "Automatisation de la génération des fonds miroirs et export de documents réglementaires prêts à l'emploi.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Partner tool — authentication required",
+      fr: "Outil partenaire — authentification requise",
+    },
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "dealbreaker",
+    title: "Dealbreaker",
+    oneLiner: {
+      en: "Advisor tool to optimize savings/retirement advice: contract analysis, portfolio comparison, offer generation, and meeting-ready exports.",
+      fr: "Outil conseiller pour optimiser le conseil en épargne/retraite : analyse de contrats, comparaison de portefeuilles, génération d'offres et exports prêts pour RDV.",
+    },
+    category: "advisor-tools",
+    role: {
+      en: "Frontend Lead — end-to-end UI ownership, design system, API integration",
+      fr: "Lead Frontend — ownership UI end-to-end, design system, intégration API",
+    },
+    timeframe: "2024–Present",
+    stack: ["Next.js", "React", "TypeScript", "tRPC", "PostgreSQL", "Drizzle", "Turborepo", "Tailwind", "shadcn/ui"],
+    highlights: {
+      en: [
+        "Owned entire frontend end-to-end: UI/UX design participation, implementation, and production-grade delivery.",
+        "Built reusable component library and maintained strong engineering standards across monorepo.",
+        "Integrated frontend with AI-powered backend engine for automated contract analysis and offer generation.",
+      ],
+      fr: [
+        "Ownership frontend complet : participation au design UI/UX, implémentation et livraison production-grade.",
+        "Construction d'une bibliothèque de composants réutilisables et maintien de standards d'ingénierie élevés dans le monorepo.",
+        "Intégration du frontend avec le moteur backend alimenté par IA pour l'analyse automatique des contrats et la génération d'offres.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Advisor tool — authentication required",
+      fr: "Outil conseiller — authentification requise",
+    },
+    links: { live: "https://dealbreaker.germen.io/", repo: null },
+  },
+  {
+    slug: "salva-subscription-funnel",
+    title: "Salva Subscription Funnel",
+    oneLiner: {
+      en: "Online subscription funnel for Salva by Garance: retirement savings plan (PER) with cashback rewards and partner integrations.",
+      fr: "Funnel de souscription en ligne pour Salva by Garance : plan d'épargne retraite (PER) avec cashback et intégrations partenaires.",
+    },
+    category: "platform",
+    role: {
+      en: "Frontend Lead — end-to-end delivery, UX with compliance constraints",
+      fr: "Lead Frontend — delivery end-to-end, UX sous contraintes réglementaires",
+    },
+    timeframe: "2023",
+    stack: ["TypeScript", "React", "Next.js", "Tailwind", "shadcn/ui", "tRPC", "AWS"],
+    highlights: {
+      en: [
+        "Built complete subscription journey for Salva retirement savings product with regulatory compliance.",
+        "Integrated cashback rewards system with 1000+ partner brands (Decathlon, Airbnb, Cheerz, etc.).",
+        "Delivered mobile-first responsive design with Cagn'Up app integration for seamless user experience.",
+      ],
+      fr: [
+        "Construction du parcours de souscription complet pour le produit d'épargne retraite Salva avec conformité réglementaire.",
+        "Intégration du système de cashback avec 1000+ marques partenaires (Decathlon, Airbnb, Cheerz, etc.).",
+        "Livraison d'un design responsive mobile-first avec intégration de l'app Cagn'Up pour une expérience utilisateur fluide.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Production system — authentication required",
+      fr: "Système en production — authentification requise",
+    },
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "quanta-pero-advisor-platform",
+    title: "Quanta (PERO Advisor Platform)",
+    oneLiner: {
+      en: "Advisor portal to manage collective retirement plans (PERO): operations, validations, and company/employee workflows.",
+      fr: "Portail conseiller pour la gestion des plans d'épargne retraite collectifs (PERO) : opérations, validations et workflows entreprise/salarié.",
+    },
+    category: "advisor-tools",
+    role: {
+      en: "Frontend Lead — architecture, delivery, cross-team collaboration",
+      fr: "Lead Frontend — architecture, delivery, collaboration inter-équipes",
+    },
+    timeframe: "2023–2024",
+    stack: ["TypeScript", "React", "Next.js", "tRPC", "PostgreSQL", "AWS", "Tailwind"],
+    highlights: {
+      en: [
+        "Built complex advisor workflows with strong data integrity and clear step-by-step operations.",
+        "Implemented robust UI patterns for validations, edge cases, and regulated operational constraints.",
+        "Partnered with business stakeholders to translate domain rules into a usable and scalable product.",
+      ],
+      fr: [
+        "Construction de workflows conseillers complexes avec forte intégrité des données et opérations étape par étape.",
+        "Implémentation de patterns UI robustes pour validations, cas limites et contraintes opérationnelles réglementées.",
+        "Collaboration avec les stakeholders métier pour traduire les règles du domaine en produit utilisable et scalable.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Advisor tooling — authentication required",
+      fr: "Outil conseiller — authentification requise",
+    },
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "garance-mobile-app",
+    title: "Garance Mobile App",
+    oneLiner: {
+      en: "Customer mobile app for Garance: account management, contract consultation, and regulated insurance operations (risk changes, management changes, redemptions).",
+      fr: "Application mobile client Garance : gestion de compte, consultation des contrats et opérations d'assurance réglementées (changement de risque, changement de gestion, rachats).",
+    },
+    category: "mobile",
+    role: {
+      en: "Frontend Lead — mobile delivery, UI quality, production readiness",
+      fr: "Lead Frontend — delivery mobile, qualité UI, production-ready",
+    },
+    timeframe: "2023–Present",
+    stack: ["TypeScript", "React Native", "React", "tRPC", "API integrations"],
+    highlights: {
+      en: [
+        "Built complete customer space: account overview, contract details, and document access.",
+        "Implemented regulated operations: risk profile changes, management option changes, partial/total redemptions.",
+        "Delivered consistent UX aligned with web platform while respecting mobile-specific constraints.",
+      ],
+      fr: [
+        "Construction de l'espace client complet : vue d'ensemble du compte, détails des contrats, accès aux documents.",
+        "Implémentation des opérations réglementées : changement de profil de risque, changement d'options de gestion, rachats partiels/totaux.",
+        "Livraison d'une UX cohérente avec la plateforme web tout en respectant les contraintes spécifiques au mobile.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Mobile production app — authentication required",
+      fr: "App mobile en production — authentification requise",
+    },
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "platform-migration-vite",
+    title: "Platform Migration to Vite",
+    oneLiner: {
+      en: "Major migration of subscription journeys, customer space, and back-office apps from legacy CRA/Redux to modern Vite + React Query stack.",
+      fr: "Migration majeure des parcours de souscription, espace client et apps back-office de CRA/Redux legacy vers stack moderne Vite + React Query.",
+    },
+    category: "platform",
+    role: {
+      en: "Frontend Lead — migration strategy, architecture, delivery",
+      fr: "Lead Frontend — stratégie de migration, architecture, delivery",
+    },
+    timeframe: "2023–2024",
+    stack: ["TypeScript", "React", "Vite", "React Query", "Tailwind", "tRPC"],
+    highlights: {
+      en: [
+        "Led migration of subscription journeys from CRA + Redux to Vite + React Query for improved performance and DX.",
+        "Rebuilt customer space with modern patterns: server state management, optimistic updates, and better caching.",
+        "Migrated back-office manager tools while ensuring zero downtime and feature parity.",
+      ],
+      fr: [
+        "Pilotage de la migration des parcours de souscription de CRA + Redux vers Vite + React Query pour de meilleures performances et DX.",
+        "Refonte de l'espace client avec patterns modernes : gestion d'état serveur, mises à jour optimistes, meilleur caching.",
+        "Migration des outils gestionnaire back-office sans interruption de service et avec parité fonctionnelle.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Production system — authentication required",
+      fr: "Système en production — authentification requise",
+    },
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "self-care-subscription-funnel",
+    title: "Self-care Subscription Funnel",
+    oneLiner: {
+      en: "Customer self-serve online subscription for life insurance and retirement savings (PER) with regulated UX constraints.",
+      fr: "Souscription en ligne en autonomie pour l'assurance vie et l'épargne retraite (PER) avec contraintes UX réglementaires.",
+    },
+    category: "platform",
+    role: {
+      en: "Frontend Lead — end-to-end delivery, UX with compliance constraints",
+      fr: "Lead Frontend — delivery end-to-end, UX sous contraintes réglementaires",
+    },
+    timeframe: "2022–2023",
+    stack: ["TypeScript", "React", "Next.js", "Tailwind", "shadcn/ui", "tRPC", "AWS"],
+    highlights: {
+      en: [
+        "Designed and delivered end-to-end subscription journeys with mandatory compliance steps (e.g., risk questionnaire).",
+        "Built reusable UI patterns to keep complex regulated flows understandable and maintainable.",
+        "Integrated partner/external APIs while keeping a reliable and testable frontend architecture.",
+      ],
+      fr: [
+        "Conception et livraison de parcours de souscription end-to-end avec étapes réglementaires obligatoires.",
+        "Création de patterns UI réutilisables pour des flux réglementés complexes mais maintenables.",
+        "Intégration d'APIs partenaires tout en gardant une architecture frontend fiable et testable.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Production system — authentication required",
+      fr: "Système en production — authentification requise",
+    },
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "studio-ambiant",
+    title: "Studio Ambiant",
+    oneLiner: {
+      en: "Showcase website and back-office for a culinary production studio — full-stack with reservation management.",
+      fr: "Site vitrine et back-office pour un studio de production culinaire — full-stack avec gestion des réservations.",
+    },
+    category: "personal",
+    role: {
+      en: "Solo Full-stack Developer — end-to-end ownership",
+      fr: "Développeur Full-stack Solo — ownership end-to-end",
+    },
+    timeframe: "2022–2023",
+    stack: ["TypeScript", "React", "Node.js", "Express", "MongoDB", "Docker", "Material UI"],
+    highlights: {
+      en: [
+        "Built showcase website presenting the studio, team, and culinary content catalog.",
+        "Developed back-office CMS for content management and reservation booking system.",
+        "Delivered full-stack solution from database schema to production deployment.",
+      ],
+      fr: [
+        "Construction du site vitrine présentant le studio, l'équipe et le catalogue de contenus culinaires.",
+        "Développement du back-office CMS pour la gestion de contenu et système de réservation.",
+        "Livraison d'une solution full-stack du schéma de base de données au déploiement en production.",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "collect-for-good",
+    title: "Collect For Good",
+    oneLiner: {
+      en: "Volunteer-built logistics platform to coordinate donation collection and transport to Ukraine border.",
+      fr: "Plateforme logistique bénévole pour coordonner la collecte et le transport de dons vers la frontière ukrainienne.",
+    },
+    category: "volunteer",
+    role: {
+      en: "Full Stack Developer — rapid delivery, end-to-end ownership",
+      fr: "Développeur Full Stack — delivery rapide, ownership end-to-end",
+    },
+    timeframe: "2022",
+    stack: ["TypeScript", "React", "Redux", "Node.js", "Express", "MongoDB", "Tailwind"],
+    highlights: {
+      en: [
+        "Shipped core features quickly with a focus on clarity and operational usability.",
+        "Owned end-to-end delivery from data model to UI, with pragmatic trade-offs for speed.",
+        "Collaborated with a small team under time constraints to deliver a working product.",
+      ],
+      fr: [
+        "Livraison rapide des features clés avec un focus sur la clarté et l'utilisabilité opérationnelle.",
+        "Ownership end-to-end du modèle de données à l'UI, avec compromis pragmatiques pour la vitesse.",
+        "Collaboration en petite équipe sous contraintes de temps pour livrer un produit fonctionnel.",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: { live: null, repo: null },
+  },
+  // === OLDER PROJECTS ===
+  {
+    slug: "polyseme-v1",
+    title: "POLYSEME V1",
+    oneLiner: {
+      en: "First major platform refonte: subscription journeys, customer space, and back-office manager tools for regulated insurance products.",
+      fr: "Première refonte majeure de la plateforme : parcours de souscription, espace client et outils gestionnaire pour les produits d'assurance réglementés.",
+    },
+    category: "platform",
+    role: {
+      en: "Frontend Developer — delivery, UI implementation, cross-team collaboration",
+      fr: "Développeur Frontend — delivery, implémentation UI, collaboration inter-équipes",
+    },
+    timeframe: "2021–2022",
+    stack: ["TypeScript", "React", "Redux", "Styled Components", "REST APIs"],
+    highlights: {
+      en: [
+        "Built subscription journeys for life insurance and retirement savings products with regulatory compliance.",
+        "Developed customer space for contract consultation, account management, and document access.",
+        "Implemented back-office manager tools for operations, validations, and customer support workflows.",
+      ],
+      fr: [
+        "Construction des parcours de souscription pour l'assurance vie et l'épargne retraite avec conformité réglementaire.",
+        "Développement de l'espace client pour consultation des contrats, gestion de compte et accès aux documents.",
+        "Implémentation des outils gestionnaire pour les opérations, validations et workflows support client.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Production system — authentication required",
+      fr: "Système en production — authentification requise",
+    },
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "tribz",
+    title: "Tribz",
+    oneLiner: {
+      en: "Influencer marketing platform connecting brands with content creators — full-stack PWA with social media scraping.",
+      fr: "Plateforme de marketing d'influence connectant marques et créateurs de contenu — PWA full-stack avec scraping réseaux sociaux.",
+    },
+    category: "platform",
+    role: {
+      en: "Solo Full-stack Developer — end-to-end ownership",
+      fr: "Développeur Full-stack Solo — ownership end-to-end",
+    },
+    timeframe: "2021",
+    stack: ["React", "Redux", "Node.js", "Express", "PostgreSQL", "MongoDB", "Docker", "Jenkins"],
+    highlights: {
+      en: [
+        "Built complete platform solo: frontend, backend APIs, database design, and deployment pipeline.",
+        "Implemented social media scraping for YouTube, Facebook, and Instagram to aggregate influencer metrics.",
+        "Delivered PWA with campaign management, influencer discovery, and brand collaboration workflows.",
+      ],
+      fr: [
+        "Construction de la plateforme complète en solo : frontend, APIs backend, design de base de données et pipeline de déploiement.",
+        "Implémentation du scraping réseaux sociaux pour YouTube, Facebook et Instagram pour agréger les métriques influenceurs.",
+        "Livraison d'une PWA avec gestion de campagnes, découverte d'influenceurs et workflows de collaboration marques.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Internal platform — no longer active",
+      fr: "Plateforme interne — plus active",
+    },
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "boutique-des-anges",
+    title: "Boutique des Anges",
+    oneLiner: {
+      en: "Showcase website for a Parisian boutique in Montmartre — WordPress/Elementor.",
+      fr: "Site vitrine pour une boutique parisienne à Montmartre — WordPress/Elementor.",
+    },
+    category: "personal",
+    role: {
+      en: "Web Developer — design and implementation",
+      fr: "Développeur Web — design et implémentation",
+    },
+    timeframe: "2019–2020",
+    stack: ["WordPress", "Elementor"],
+    highlights: {
+      en: [
+        "Designed and built showcase website for family-owned Parisian boutique.",
+        "Implemented responsive design with product catalog and store information.",
+        "Configured hosting, domain, and ongoing maintenance.",
+      ],
+      fr: [
+        "Conception et construction du site vitrine pour une boutique familiale parisienne.",
+        "Implémentation d'un design responsive avec catalogue produits et informations boutique.",
+        "Configuration de l'hébergement, du domaine et maintenance continue.",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: { live: null, repo: null },
   },
 ];
 
