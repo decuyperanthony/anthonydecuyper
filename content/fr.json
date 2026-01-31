@@ -35,9 +35,16 @@
   },
   "projects": {
     "title": "Projets",
-    "description": "Une sélection de projets sur lesquels j'ai travaillé",
+    "description": "Une sélection de projets professionnels et personnels sur lesquels j'ai travaillé",
     "viewProject": "Voir le projet",
-    "viewCode": "Voir le code"
+    "viewCode": "Voir le code",
+    "categories": {
+      "platform": "Plateforme",
+      "advisor-tools": "Outils Conseiller",
+      "mobile": "Mobile",
+      "partner": "Partenaire",
+      "volunteer": "Bénévolat"
+    }
   },
   "contact": {
     "title": "Me contacter",
