@@ -1,7 +1,6 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Typography } from "@/components/ui/typography";
 import { skills } from "@/lib/constants";
 import { useI18n } from "@/lib/i18n";
 
@@ -16,16 +15,16 @@ export const Skills = () => {
   ];
 
   return (
-    <section className="space-y-8 py-16">
-      <Typography variant="h3" as="h2">
+    <section className="py-16">
+      <h2 className="mb-8 text-2xl font-semibold tracking-tight text-foreground">
         {t.skills.title}
-      </Typography>
+      </h2>
       <div className="space-y-6">
         {categories.map((category) => (
-          <div key={category.key} className="space-y-3">
-            <Typography variant="muted" as="h3" className="font-medium">
+          <div key={category.key}>
+            <h3 className="mb-3 text-sm font-medium text-muted-foreground">
               {t.skills.categories[category.key]}
-            </Typography>
+            </h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
                 <Badge key={skill} variant="secondary">
