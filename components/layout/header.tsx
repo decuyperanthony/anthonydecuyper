@@ -43,7 +43,7 @@ export const Header = () => {
             href={ROUTES.home}
             className="font-semibold tracking-tight text-foreground transition-colors hover:text-foreground/80"
           >
-            <span className="sm:hidden">ADC</span>
+            <span className="sm:hidden">AC</span>
             <span className="hidden sm:inline">{t.meta.name}</span>
           </Link>
 
