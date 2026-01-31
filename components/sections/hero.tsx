@@ -5,6 +5,7 @@ import { ArrowRight, Mail } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
+import { ROUTES } from "@/lib/routes";
 
 export const Hero = () => {
   const { t } = useI18n();
@@ -26,13 +27,13 @@ export const Hero = () => {
         </p>
         <div className="animate-fade-in-up flex flex-wrap gap-4 pt-4 opacity-0 animation-delay-400">
           <Button asChild>
-            <Link href="/cv">
+            <Link href={ROUTES.cv}>
               {t.hero.cta}
               <ArrowRight className="size-4" />
             </Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/contact">
+            <Link href={ROUTES.contact}>
               <Mail className="size-4" />
               {t.hero.contact}
             </Link>

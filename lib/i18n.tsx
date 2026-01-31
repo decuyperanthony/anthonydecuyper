@@ -8,12 +8,16 @@ import {
   type ReactNode,
 } from "react";
 
-import en from "@/content/en.json";
-import fr from "@/content/fr.json";
+import enContent from "@/content/en.json";
+import frContent from "@/content/fr.json";
 
-type Locale = "en" | "fr";
+type Translations = typeof enContent;
 
-type Translations = typeof en;
+// Validate fr.json has same structure as en.json at compile time
+const en: Translations = enContent;
+const fr: Translations = frContent satisfies Translations;
+
+export type Locale = "en" | "fr";
 
 const translations: Record<Locale, Translations> = { en, fr };
 
@@ -27,10 +31,13 @@ const I18nContext = createContext<I18nContextType | null>(null);
 
 const STORAGE_KEY = "preferred-locale";
 
+const isValidLocale = (value: string | null): value is Locale =>
+  value === "en" || value === "fr";
+
 const getStoredLocale = (): Locale => {
   if (typeof window === "undefined") return "en";
   const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "en" || stored === "fr") return stored;
+  if (isValidLocale(stored)) return stored;
   const browserLang = navigator.language.split("-")[0];
   return browserLang === "fr" ? "fr" : "en";
 };
@@ -54,8 +61,9 @@ export const I18nProvider = ({ children }: I18nProviderProps) => {
     getServerSnapshot
   );
 
-  const locale: Locale =
-    storedValue === "fr" ? "fr" : storedValue === "en" ? "en" : getStoredLocale();
+  const locale: Locale = isValidLocale(storedValue)
+    ? storedValue
+    : getStoredLocale();
 
   const setLocale = useCallback((newLocale: Locale) => {
     localStorage.setItem(STORAGE_KEY, newLocale);

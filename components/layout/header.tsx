@@ -6,15 +6,16 @@ import { usePathname } from "next/navigation";
 import { LangToggle } from "@/components/lang-toggle";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { useI18n } from "@/lib/i18n";
+import { ROUTES } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 
 import { PageContainer } from "./page-container";
 
 const navItems = [
-  { href: "/", key: "home" },
-  { href: "/cv", key: "cv" },
-  { href: "/projects", key: "projects" },
-  { href: "/contact", key: "contact" },
+  { href: ROUTES.home, key: "home" },
+  { href: ROUTES.cv, key: "cv" },
+  { href: ROUTES.projects, key: "projects" },
+  { href: ROUTES.contact, key: "contact" },
 ] as const;
 
 export const Header = () => {
@@ -26,7 +27,7 @@ export const Header = () => {
       <PageContainer>
         <div className="flex h-14 items-center justify-between">
           <Link
-            href="/"
+            href={ROUTES.home}
             className="font-semibold tracking-tight text-foreground transition-colors hover:text-foreground/80"
           >
             {t.meta.name}
@@ -35,8 +36,8 @@ export const Header = () => {
           <nav className="flex items-center gap-1">
             {navItems.map((item) => {
               const isActive =
-                item.href === "/"
-                  ? pathname === "/"
+                item.href === ROUTES.home
+                  ? pathname === ROUTES.home
                   : pathname.startsWith(item.href);
 
               return (
