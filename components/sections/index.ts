@@ -1,6 +1,7 @@
 export { About } from "./about";
 export { ContactLink } from "./contact-link";
 export { ContactLinks } from "./contact-links";
+export { CVDownload } from "./cv-download";
 export { CVHeader } from "./cv-header";
 export { Education } from "./education";
 export { Experience } from "./experience";
