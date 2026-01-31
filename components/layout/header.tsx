@@ -7,24 +7,13 @@ import { useState } from "react";
 import { LangToggle } from "@/components/lang-toggle";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
 import { useI18n } from "@/lib/i18n";
 import { ROUTES } from "@/lib/routes";
 
+import { MobileNav } from "./mobile-nav";
+import { navItems } from "./nav-items";
 import { NavLink } from "./nav-link";
 import { PageContainer } from "./page-container";
-
-const navItems = [
-  { href: ROUTES.home, key: "home" },
-  { href: ROUTES.cv, key: "cv" },
-  { href: ROUTES.projects, key: "projects" },
-  { href: ROUTES.contact, key: "contact" },
-] as const;
 
 export const Header = () => {
   const { t } = useI18n();
@@ -55,7 +44,7 @@ export const Header = () => {
             <ThemeToggle />
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile */}
           <div className="flex items-center gap-1 md:hidden">
             <LangToggle />
             <ThemeToggle />
@@ -69,25 +58,7 @@ export const Header = () => {
             </Button>
           </div>
 
-          {/* Mobile sheet */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetContent side="right" className="w-72">
-              <SheetHeader>
-                <SheetTitle>{t.meta.name}</SheetTitle>
-              </SheetHeader>
-              <nav className="flex flex-col gap-2 px-4">
-                {navItems.map((item) => (
-                  <NavLink
-                    key={item.href}
-                    href={item.href}
-                    navKey={item.key}
-                    mobile
-                    onClick={() => setIsOpen(false)}
-                  />
-                ))}
-              </nav>
-            </SheetContent>
-          </Sheet>
+          <MobileNav open={isOpen} onOpenChange={setIsOpen} />
         </div>
       </PageContainer>
     </header>
