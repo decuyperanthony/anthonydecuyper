@@ -23,8 +23,8 @@ export const PageTitle = ({ titleKey, descriptionKey }: PageTitleProps) => {
   };
 
   return (
-    <div className="py-12">
-      <h1 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+    <div className="space-y-4 py-12">
+      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         {titleMap[titleKey]}
       </h1>
       {descriptionKey && descriptionMap[descriptionKey] && (

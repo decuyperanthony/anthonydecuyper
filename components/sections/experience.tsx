@@ -8,8 +8,8 @@ export const Experience = () => {
   const { locale, t } = useI18n();
 
   return (
-    <section className="py-16">
-      <h2 className="mb-8 text-2xl font-semibold tracking-tight text-foreground">
+    <section className="space-y-8 py-16">
+      <h2 className="text-2xl font-semibold tracking-tight text-foreground">
         {t.experience.title}
       </h2>
       <div className="space-y-8">
