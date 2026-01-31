@@ -15,14 +15,14 @@ export const Skills = () => {
   ];
 
   return (
-    <section className="py-16">
-      <h2 className="mb-8 text-2xl font-semibold tracking-tight text-foreground">
+    <section className="space-y-8 py-16">
+      <h2 className="text-2xl font-semibold tracking-tight text-foreground">
         {t.skills.title}
       </h2>
       <div className="space-y-6">
         {categories.map((category) => (
-          <div key={category.key}>
-            <h3 className="mb-3 text-sm font-medium text-muted-foreground">
+          <div key={category.key} className="space-y-3">
+            <h3 className="text-sm font-medium text-muted-foreground">
               {t.skills.categories[category.key]}
             </h3>
             <div className="flex flex-wrap gap-2">
