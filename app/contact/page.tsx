@@ -1,5 +1,5 @@
 import { Footer, Header, PageContainer } from "@/components/layout";
-import { ContactCard, PageTitle } from "@/components/sections";
+import { ContactLinks, PageTitle } from "@/components/sections";
 
 export const metadata = {
   title: "Contact",
@@ -13,7 +13,7 @@ const ContactPage = () => (
       <PageContainer>
         <PageTitle titleKey="contact" descriptionKey="contact" />
         <div className="max-w-md">
-          <ContactCard />
+          <ContactLinks />
         </div>
       </PageContainer>
     </main>
