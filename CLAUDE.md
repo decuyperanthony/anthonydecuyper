@@ -52,7 +52,7 @@ To add a new language (e.g., Spanish):
    import esContent from "@/content/es.json";
 
    const translations = {
-     en: enContent as Translations,
+     en: enContent,
      fr: frContent satisfies Translations,
      es: esContent satisfies Translations,  // add
    } as const;
