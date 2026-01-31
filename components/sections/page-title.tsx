@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography } from "@/components/ui/typography";
 import { useI18n } from "@/lib/i18n";
 
 type PageTitleProps = {
@@ -24,14 +23,14 @@ export const PageTitle = ({ titleKey, descriptionKey }: PageTitleProps) => {
   };
 
   return (
-    <div className="space-y-4 py-12">
-      <Typography variant="h2" as="h1" className="sm:text-4xl">
+    <div className="py-12">
+      <h1 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         {titleMap[titleKey]}
-      </Typography>
+      </h1>
       {descriptionKey && descriptionMap[descriptionKey] && (
-        <Typography variant="body-large" className="max-w-2xl">
+        <p className="max-w-2xl text-muted-foreground">
           {descriptionMap[descriptionKey]}
-        </Typography>
+        </p>
       )}
     </div>
   );

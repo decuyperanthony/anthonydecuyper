@@ -1,7 +1,9 @@
 export { About } from "./about";
 export { ContactCard } from "./contact-card";
+export { CVHeader } from "./cv-header";
 export { Education } from "./education";
 export { Experience } from "./experience";
 export { Hero } from "./hero";
+export { PageTitle } from "./page-title";
 export { ProjectCard } from "./project-card";
 export { Skills } from "./skills";

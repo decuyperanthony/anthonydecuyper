@@ -1,10 +1,10 @@
 import { Footer, Header, PageContainer } from "@/components/layout";
-import { ProjectCard } from "@/components/sections";
+import { PageTitle, ProjectCard } from "@/components/sections";
 import { projects } from "@/lib/constants";
 
 export const metadata = {
-  title: "Projects | Anthony de Cuyper",
-  description: "A selection of projects by Anthony de Cuyper",
+  title: "Projects",
+  description: "A selection of projects",
 };
 
 const ProjectsPage = () => (
@@ -12,21 +12,17 @@ const ProjectsPage = () => (
     <Header />
     <main className="flex-1">
       <PageContainer>
-        <div className="py-12">
-          <h1 className="mb-8 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Projects
-          </h1>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {projects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                technologies={project.technologies}
-                url={project.url}
-              />
-            ))}
-          </div>
+        <PageTitle titleKey="projects" descriptionKey="projects" />
+        <div className="grid gap-6 sm:grid-cols-2">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              technologies={project.technologies}
+              url={project.url}
+            />
+          ))}
         </div>
       </PageContainer>
     </main>
