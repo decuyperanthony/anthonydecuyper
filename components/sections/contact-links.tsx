@@ -3,11 +3,10 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
 import { contact } from "@/lib/constants";
+import { getDisplayUrl } from "@/lib/format";
 import { useI18n } from "@/lib/i18n";
 
 import { ContactLink } from "./contact-link";
-
-const getDisplayUrl = (url: string) => url.replace(/^https?:\/\/(www\.)?/, "");
 
 export const ContactLinks = () => {
   const { t } = useI18n();
