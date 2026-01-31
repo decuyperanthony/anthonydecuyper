@@ -1,5 +1,6 @@
 "use client";
 
+import { Typography } from "@/components/ui/typography";
 import { useI18n } from "@/lib/i18n";
 
 export const CVHeader = () => {
@@ -9,15 +10,19 @@ export const CVHeader = () => {
     <>
       <div className="print:hidden">
         <div className="py-12">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <Typography variant="h2" as="h1" className="sm:text-4xl">
             {t.cv.title}
-          </h1>
+          </Typography>
         </div>
       </div>
       <div className="hidden print:block">
         <div className="py-8 text-center">
-          <h1 className="text-3xl font-bold text-foreground">{t.meta.name}</h1>
-          <p className="text-muted-foreground">{t.meta.role}</p>
+          <Typography variant="h2" as="h1">
+            {t.meta.name}
+          </Typography>
+          <Typography variant="body">
+            {t.meta.role}
+          </Typography>
         </div>
       </div>
     </>
