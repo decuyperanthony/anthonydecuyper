@@ -7,4 +7,5 @@ export { Education } from "./education";
 export { Experience } from "./experience";
 export { Hero } from "./hero";
 export { ProjectCard } from "./project-card";
+export { ProjectShowcase } from "./project-showcase";
 export { Skills } from "./skills";

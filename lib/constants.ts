@@ -98,6 +98,7 @@ export type Project = {
   access: ProjectAccess;
   accessNote: { en: string; fr: string } | null;
   links: { live: string | null; repo: string | null };
+  images?: string[];
 };
 
 export const projects: Project[] = [

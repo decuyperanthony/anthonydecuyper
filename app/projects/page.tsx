@@ -1,5 +1,5 @@
 import { PageLayout } from "@/components/layout";
-import { ProjectCard } from "@/components/sections";
+import { ProjectShowcase } from "@/components/sections";
 import { projects } from "@/lib/constants";
 
 export const metadata = {
@@ -9,9 +9,9 @@ export const metadata = {
 
 const ProjectsPage = () => (
   <PageLayout titleKey="projects" descriptionKey="projects">
-    <div className="grid gap-6 lg:grid-cols-2">
+    <div className="grid gap-8 lg:grid-cols-2">
       {projects.map((project) => (
-        <ProjectCard key={project.slug} {...project} />
+        <ProjectShowcase key={project.slug} {...project} />
       ))}
     </div>
   </PageLayout>
