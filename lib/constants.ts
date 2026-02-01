@@ -28,8 +28,8 @@ export const experience = [
     },
     period: { start: "2021", end: null },
     description: {
-      en: "Led frontend architecture across multiple insurance platforms. Migrated monolithic CRA + Redux codebase to Turborepo monorepo. Built a shared design system and delivered a React Native mobile app for insurance subscription journeys.",
-      fr: "Direction de l'architecture frontend sur plusieurs plateformes d'assurance. Migration d'une codebase monolithique CRA + Redux vers un monorepo Turborepo. Conception d'un design system partagé et développement d'une application mobile React Native pour les parcours de souscription.",
+      en: "Led frontend architecture across 10 production applications and 8 shared packages. Managed team of 4 engineers. Built design system (25+ components) and delivered compliant subscription flows for 3 insurers (Kelia, Quanta, Garance). Shipped React Native mobile app.",
+      fr: "Direction de l'architecture frontend sur 10 applications en production et 8 packages partagés. Encadrement d'une équipe de 4 développeurs. Conception du design system (25+ composants) et livraison de parcours de souscription conformes pour 3 assureurs (Kelia, Quanta, Garance). Développement d'une application mobile React Native.",
     },
     technologies: [
       "TypeScript",
@@ -50,10 +50,10 @@ export const experience = [
     },
     period: { start: "2022", end: "2023" },
     description: {
-      en: "Built end-to-end React/Node platform with back-office CMS. Designed PostgreSQL schema and REST APIs, delivering features from database to production UI.",
-      fr: "Développement d'une plateforme React/Node complète avec CMS back-office. Conception du schéma PostgreSQL et des APIs REST, livraison de fonctionnalités end-to-end.",
+      en: "Built end-to-end React/Node platform with back-office CMS. Designed MongoDB schema and REST APIs, delivering features from database to production UI.",
+      fr: "Développement d'une plateforme React/Node complète avec CMS back-office. Conception du schéma MongoDB et des APIs REST, livraison de fonctionnalités end-to-end.",
     },
-    technologies: ["TypeScript", "React", "Node.js", "PostgreSQL", "REST APIs"],
+    technologies: ["TypeScript", "React", "Node.js", "MongoDB", "Express", "Docker"],
   },
   {
     company: "Collect For Good",
@@ -66,7 +66,7 @@ export const experience = [
       en: "Built humanitarian logistics platform coordinating donation collection and transport to Ukraine border during active crisis response.",
       fr: "Contribution à une plateforme logistique humanitaire pour coordonner la collecte et le transport de dons vers la frontière ukrainienne.",
     },
-    technologies: ["Next.js", "TypeScript", "PostgreSQL"],
+    technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind"],
   },
   {
     company: "Tanke",
@@ -79,7 +79,20 @@ export const experience = [
       en: "Developed React applications and Node APIs powering influencer marketing campaigns for major brands. Owned full stack delivery in fast-paced agency environment.",
       fr: "Développement d'applications React et APIs Node pour des campagnes marketing d'influence pour grandes marques. Responsabilité full stack en environnement agence.",
     },
-    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "REST APIs"],
+    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "MongoDB", "Docker"],
+  },
+  {
+    company: "StartMinting",
+    role: {
+      en: "Full Stack Developer",
+      fr: "Développeur Full Stack",
+    },
+    period: { start: "2023", end: "2023" },
+    description: {
+      en: "Built Web3 DeFi platform for tokenized Bitcoin mining investments. Developed ERC-721 NFT smart contracts, staking pools with BTC rewards, and multi-payment support (ETH, stablecoins, fiat).",
+      fr: "Développement d'une plateforme Web3 DeFi pour l'investissement en mining Bitcoin tokenisé. Création de smart contracts ERC-721, pools de staking avec récompenses BTC et support multi-paiement (ETH, stablecoins, fiat).",
+    },
+    technologies: ["Solidity", "Next.js", "TypeScript", "Wagmi", "Hardhat", "Chainlink", "Firebase"],
   },
 ];
 
@@ -102,7 +115,7 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  // === CURRENT / MOST RECENT ===
+  // === CURRENT / FLAGSHIP ===
   {
     slug: "polyseme-v2",
     title: "POLYSEME V2",
@@ -115,7 +128,7 @@ export const projects: Project[] = [
       en: "Frontend Lead — architecture, standards, mentoring, delivery",
       fr: "Lead Frontend — architecture, standards, mentorat, delivery",
     },
-    timeframe: "2021–Present",
+    timeframe: "2024–Present",
     stack: ["TypeScript", "React", "Next.js", "Turborepo", "Tailwind", "shadcn/ui", "tRPC", "PostgreSQL", "AWS"],
     highlights: {
       en: [
@@ -136,6 +149,7 @@ export const projects: Project[] = [
     },
     links: { live: null, repo: null },
   },
+  // === 2024 ===
   {
     slug: "generali-fonds-miroirs",
     title: "Generali Module Fonds Miroirs",
@@ -149,7 +163,7 @@ export const projects: Project[] = [
       fr: "Développeur Full-stack Solo — ownership end-to-end, intégration IA",
     },
     timeframe: "2024",
-    stack: ["TypeScript", "React", "Next.js", "PostgreSQL", "AWS", "OpenAI"],
+    stack: ["TypeScript", "React", "Next.js", "PostgreSQL", "Drizzle", "tRPC", "Clerk"],
     highlights: {
       en: [
         "Built complete application solo: frontend, authentication, database schema, and document generation.",
@@ -200,7 +214,7 @@ export const projects: Project[] = [
       en: "Advisor tool — authentication required",
       fr: "Outil conseiller — authentification requise",
     },
-    links: { live: "https://dealbreaker.germen.io/", repo: null },
+    links: { live: null, repo: null },
   },
   {
     slug: "salva-subscription-funnel",
@@ -265,6 +279,39 @@ export const projects: Project[] = [
     accessNote: {
       en: "Advisor tooling — authentication required",
       fr: "Outil conseiller — authentification requise",
+    },
+    links: { live: null, repo: null },
+  },
+  {
+    slug: "boat-manager",
+    title: "Boat Manager",
+    oneLiner: {
+      en: "SaaS platform for fleet management and reservations — cutting-edge stack with role-based access.",
+      fr: "Plateforme SaaS de gestion de flotte et réservations — stack cutting-edge avec contrôle d'accès par rôles.",
+    },
+    category: "platform",
+    role: {
+      en: "Full Stack Developer — end-to-end ownership",
+      fr: "Développeur Full Stack — ownership end-to-end",
+    },
+    timeframe: "2025",
+    stack: ["Next.js 15", "React 19", "TypeScript", "tRPC 11", "Supabase", "Drizzle", "shadcn/ui"],
+    highlights: {
+      en: [
+        "Built complete SaaS with RBAC (admin, boat_manager, boat_captain, boat_owner) and user invitation system.",
+        "Implemented event calendar with day/week/month views using React Big Calendar.",
+        "Cutting-edge stack: Next.js 15, React 19, tRPC 11 with Supabase auth and role-aware queries.",
+      ],
+      fr: [
+        "Construction d'un SaaS complet avec RBAC (admin, boat_manager, boat_captain, boat_owner) et système d'invitation.",
+        "Implémentation d'un calendrier d'événements avec vues jour/semaine/mois via React Big Calendar.",
+        "Stack cutting-edge : Next.js 15, React 19, tRPC 11 avec auth Supabase et requêtes role-aware.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Private project — in development",
+      fr: "Projet privé — en développement",
     },
     links: { live: null, repo: null },
   },
@@ -334,6 +381,40 @@ export const projects: Project[] = [
     },
     links: { live: null, repo: null },
   },
+  {
+    slug: "startminting",
+    title: "StartMinting",
+    oneLiner: {
+      en: "Web3 DeFi platform for tokenized Bitcoin mining — NFT investments with staking rewards.",
+      fr: "Plateforme Web3 DeFi de mining Bitcoin tokenisé — investissements NFT avec récompenses de staking.",
+    },
+    category: "platform",
+    role: {
+      en: "Full Stack Developer — smart contracts, frontend, backend",
+      fr: "Développeur Full Stack — smart contracts, frontend, backend",
+    },
+    timeframe: "2023",
+    stack: ["Solidity", "Next.js", "TypeScript", "Wagmi", "RainbowKit", "Hardhat", "Chainlink", "Firebase"],
+    highlights: {
+      en: [
+        "Developed ERC-721 smart contracts with ReentrancyGuard and Pausable patterns for secure NFT minting.",
+        "Integrated Chainlink price feeds (ETH/USD oracle) for real-time pricing and multi-payment support.",
+        "Built event-driven architecture syncing blockchain events to Firestore for off-chain data.",
+      ],
+      fr: [
+        "Développement de smart contracts ERC-721 avec patterns ReentrancyGuard et Pausable pour un minting NFT sécurisé.",
+        "Intégration des price feeds Chainlink (oracle ETH/USD) pour pricing temps réel et support multi-paiement.",
+        "Architecture event-driven synchronisant les événements blockchain vers Firestore pour les données off-chain.",
+      ],
+    },
+    access: "restricted",
+    accessNote: {
+      en: "Platform no longer active — testnet deployment",
+      fr: "Plateforme plus active — déploiement testnet",
+    },
+    links: { live: null, repo: null },
+  },
+  // === 2022 ===
   {
     slug: "self-care-subscription-funnel",
     title: "Self-care Subscription Funnel",
