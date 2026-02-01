@@ -47,3 +47,6 @@ public/workbox-*.js
 public/workbox-*.js.map
 public/swe-worker-*.js
 public/swe-worker-*.js.map
+
+# Auto-generated CV PDFs (managed by CV repo workflow)
+# Uncomment to ignore: public/cv/*.pdf
