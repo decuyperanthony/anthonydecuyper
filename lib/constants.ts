@@ -135,7 +135,6 @@ export const projects: Project[] = [
       fr: "Système en production — authentification requise",
     },
     links: { live: null, repo: null },
-    images: ["/projects/polyseme-v2.png"],
   },
   {
     slug: "generali-fonds-miroirs",
