@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "Anthony de Cuyper",
     template: "%s | Anthony de Cuyper",
   },
-  description: "Frontend engineering leader building complex regulated digital products",
+  description: "Lead Frontend Engineer building complex regulated digital products",
   metadataBase: new URL("https://anthonydecuyper.com"),
   keywords: [
     "Frontend",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Next.js",
     "TypeScript",
     "Software Engineer",
-    "Tech Lead",
+    "Lead Frontend Engineer",
   ],
   authors: [{ name: "Anthony de Cuyper" }],
   creator: "Anthony de Cuyper",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     alternateLocale: "fr_FR",
     title: "Anthony de Cuyper",
-    description: "Frontend engineering leader building complex regulated digital products",
+    description: "Lead Frontend Engineer building complex regulated digital products",
     siteName: "Anthony de Cuyper",
   },
   twitter: {
     card: "summary_large_image",
     title: "Anthony de Cuyper",
-    description: "Frontend engineering leader building complex regulated digital products",
+    description: "Lead Frontend Engineer building complex regulated digital products",
   },
   robots: {
     index: true,

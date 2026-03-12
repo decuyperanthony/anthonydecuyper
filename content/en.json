@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "Anthony de Cuyper",
-    "role": "Head of Frontend",
-    "tagline": "React, Next.js, React Native"
+    "role": "Lead Frontend Engineer",
+    "tagline": "React, Next.js, TypeScript"
   },
   "nav": {
     "home": "Home",
@@ -12,13 +12,13 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "description": "Frontend engineering leader with 6+ years of experience building regulated digital products. Specializing in React, Next.js, and TypeScript.",
+    "description": "Lead Frontend Engineer with 6+ years building regulated digital products (insurance, savings). Owner of frontend architecture across 10 production apps within a Turborepo monorepo. Led a team of 4 engineers.",
     "cta": "View Resume",
     "contact": "Get in Touch"
   },
   "about": {
     "title": "About",
-    "bio": "I'm a passionate frontend engineer and technical leader with deep expertise in building scalable, user-centric applications. My journey has taken me from full-stack development to leading frontend teams, where I focus on architectural decisions, code quality, and developer experience. I thrive in regulated industries where precision and reliability are paramount."
+    "bio": "Frontend engineering leader specializing in React, Next.js, and TypeScript. I design frontend architectures for complex, regulated platforms — from design systems and monorepo tooling to GDPR-compliant subscription flows serving multiple insurance providers. I lead teams with a focus on code quality, developer experience, and shipping reliable products."
   },
   "skills": {
     "title": "Skills & Technologies",
