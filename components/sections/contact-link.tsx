@@ -18,7 +18,13 @@ export const ContactLink = ({ icon: Icon, label, href, value }: ContactLinkProps
     className="w-full justify-start gap-4 h-auto py-4"
     asChild
   >
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      href={href}
+      {...(!href.startsWith("mailto:") && {
+        target: "_blank",
+        rel: "noopener noreferrer",
+      })}
+    >
       <Icon className="size-5 text-muted-foreground" aria-hidden="true" />
       <div className="flex flex-col items-start">
         <Typography variant="body-small" as="span" className="font-medium">
@@ -28,7 +34,9 @@ export const ContactLink = ({ icon: Icon, label, href, value }: ContactLinkProps
           {value}
         </Typography>
       </div>
-      <span className="sr-only">(opens in new tab)</span>
+      {!href.startsWith("mailto:") && (
+        <span className="sr-only">(opens in new tab)</span>
+      )}
     </a>
   </Button>
 );
