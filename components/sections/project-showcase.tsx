@@ -13,12 +13,12 @@ import { cn } from "@/lib/utils";
 type ProjectShowcaseProps = Project;
 
 const categoryColors: Record<ProjectCategory, string> = {
-  platform: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  "advisor-tools": "bg-purple-500/20 text-purple-400 border-purple-500/30",
-  mobile: "bg-green-500/20 text-green-400 border-green-500/30",
-  partner: "bg-orange-500/20 text-orange-400 border-orange-500/30",
-  volunteer: "bg-pink-500/20 text-pink-400 border-pink-500/30",
-  personal: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+  platform: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
+  "advisor-tools": "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
+  mobile: "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20",
+  partner: "bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20",
+  volunteer: "bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20",
+  personal: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20",
 };
 
 const categoryGlow: Record<ProjectCategory, string> = {
@@ -92,7 +92,7 @@ export const ProjectShowcase = ({
       />
 
       {/* Card container */}
-      <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-card/80 backdrop-blur-xl transition-all duration-300 group-hover:border-white/20 group-hover:shadow-2xl group-hover:shadow-black/20">
+      <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card/80 backdrop-blur-xl transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-black/10">
         {/* Spotlight effect */}
         <div
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
@@ -216,7 +216,7 @@ export const ProjectShowcase = ({
               <Badge
                 key={tech}
                 variant="outline"
-                className="border-white/10 bg-white/5 text-xs text-muted-foreground transition-colors hover:border-white/20 hover:text-foreground"
+                className="bg-muted/50 text-xs text-muted-foreground transition-colors hover:text-foreground"
               >
                 {tech}
               </Badge>
@@ -253,7 +253,7 @@ export const ProjectShowcase = ({
                   </Button>
                 )}
                 {links.repo && (
-                  <Button variant="outline" size="sm" asChild className="border-white/10 hover:border-white/20">
+                  <Button variant="outline" size="sm" asChild>
                     <a href={links.repo} target="_blank" rel="noopener noreferrer">
                       <Github className="size-4" />
                       {t.projects.viewCode}
