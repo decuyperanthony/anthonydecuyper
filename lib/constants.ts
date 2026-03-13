@@ -47,6 +47,32 @@ export const experience = [
     ],
   },
   {
+    company: "Boat Manager",
+    role: {
+      en: "Full Stack Developer (Freelance)",
+      fr: "Développeur Full Stack (Freelance)",
+    },
+    period: { start: "2025", end: "2025" },
+    description: {
+      en: "Built a SaaS fleet management and booking platform from scratch with role-based access control (admin, boat_manager, boat_captain, boat_owner), invitation system, and event calendar with day/week/month views.",
+      fr: "Construction d'une plateforme SaaS de gestion de flotte et de réservations from scratch avec contrôle d'accès par rôles (admin, boat_manager, boat_captain, boat_owner), système d'invitation et calendrier d'événements avec vues jour/semaine/mois.",
+    },
+    technologies: ["Next.js 15", "React 19", "TypeScript", "tRPC 11", "Supabase", "Drizzle", "shadcn/ui"],
+  },
+  {
+    company: "StartMinting",
+    role: {
+      en: "Full Stack Developer",
+      fr: "Développeur Full Stack",
+    },
+    period: { start: "2023", end: "2023" },
+    description: {
+      en: "Built Web3 DeFi platform for tokenized Bitcoin mining investments. Developed ERC-721 NFT smart contracts, staking pools with BTC rewards, and multi-payment support (ETH, stablecoins, fiat).",
+      fr: "Développement d'une plateforme Web3 DeFi pour l'investissement en mining Bitcoin tokenisé. Création de smart contracts ERC-721, pools de staking avec récompenses BTC et support multi-paiement (ETH, stablecoins, fiat).",
+    },
+    technologies: ["Solidity", "Next.js", "TypeScript", "Wagmi", "Hardhat", "Chainlink", "Firebase"],
+  },
+  {
     company: "Studio Ambiant",
     role: {
       en: "Full Stack Developer",
@@ -84,19 +110,6 @@ export const experience = [
       fr: "Développement d'applications React et APIs Node pour des campagnes marketing d'influence pour grandes marques. Responsabilité full stack en environnement agence.",
     },
     technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "MongoDB", "Docker"],
-  },
-  {
-    company: "StartMinting",
-    role: {
-      en: "Full Stack Developer",
-      fr: "Développeur Full Stack",
-    },
-    period: { start: "2023", end: "2023" },
-    description: {
-      en: "Built Web3 DeFi platform for tokenized Bitcoin mining investments. Developed ERC-721 NFT smart contracts, staking pools with BTC rewards, and multi-payment support (ETH, stablecoins, fiat).",
-      fr: "Développement d'une plateforme Web3 DeFi pour l'investissement en mining Bitcoin tokenisé. Création de smart contracts ERC-721, pools de staking avec récompenses BTC et support multi-paiement (ETH, stablecoins, fiat).",
-    },
-    technologies: ["Solidity", "Next.js", "TypeScript", "Wagmi", "Hardhat", "Chainlink", "Firebase"],
   },
 ];
 
@@ -189,14 +202,20 @@ export const projects: Project[] = [
     stack: ["TypeScript", "React", "Next.js", "Turborepo", "Tailwind", "shadcn/ui", "tRPC", "PostgreSQL", "AWS"],
     highlights: {
       en: [
-        "Rebuilt core product journeys and advisor workflows with a modern React/Next.js architecture.",
-        "Introduced a monorepo strategy with shared packages to improve consistency and maintainability across multiple apps.",
-        "Collaborated closely with Product and Compliance to design clear, regulated onboarding and subscription flows.",
+        "Owned frontend architecture for a multi-insurer subscription platform processing 7,600+ applications across 9 providers with 89% end-to-end conversion rate.",
+        "Built subscription flows handling €76M+ in total premiums with GDPR-compliant validation (Zod) and i18n.",
+        "Designed and shipped a design system (25+ Radix UI / Tailwind components) adopted across all products, documented via Storybook.",
+        "Led a team of 4 frontend engineers: structured code reviews, pair programming, and technical standards.",
+        "Built advisor back-offices serving 395+ active users with RBAC, guardian management, and multi-insurer integrations.",
+        "Drove migration from CRA + Redux to Turborepo monorepo, then modernized to Next.js App Router, Server Actions, and tRPC.",
       ],
       fr: [
-        "Refonte des parcours produits et workflows conseillers avec une architecture React/Next.js moderne.",
-        "Mise en place d'une stratégie monorepo avec packages partagés pour améliorer la cohérence et la maintenabilité.",
-        "Collaboration étroite avec Product et Compliance pour concevoir des parcours réglementés clairs.",
+        "Pilotage de l'architecture frontend d'une plateforme de souscription multi-assureurs traitant 7 600+ dossiers chez 9 assureurs avec un taux de conversion de 89%.",
+        "Construction de parcours de souscription représentant 76M€+ de primes totales avec validation RGPD (Zod) et i18n.",
+        "Conception et livraison d'un design system (25+ composants Radix UI / Tailwind) adopté sur tous les produits, documenté via Storybook.",
+        "Management de 4 développeurs frontend : code reviews structurées, pair programming et standards techniques.",
+        "Construction de back-offices conseillers servant 395+ utilisateurs actifs avec RBAC, gestion de tutelles et intégrations multi-assureurs.",
+        "Migration de CRA + Redux vers monorepo Turborepo, puis modernisation vers Next.js App Router, Server Actions et tRPC.",
       ],
     },
     access: "restricted",
@@ -239,6 +258,36 @@ export const projects: Project[] = [
       fr: "Outil partenaire — authentification requise",
     },
     links: { live: null, repo: null },
+  },
+  {
+    slug: "boat-manager",
+    title: "Boat Manager",
+    oneLiner: {
+      en: "SaaS platform for fleet management and reservations — cutting-edge stack with role-based access.",
+      fr: "Plateforme SaaS de gestion de flotte et réservations — stack cutting-edge avec contrôle d'accès par rôles.",
+    },
+    category: "platform",
+    role: {
+      en: "Full Stack Developer — end-to-end ownership",
+      fr: "Développeur Full Stack — ownership end-to-end",
+    },
+    timeframe: "2025",
+    stack: ["Next.js 15", "React 19", "TypeScript", "tRPC 11", "Supabase", "Drizzle", "shadcn/ui"],
+    highlights: {
+      en: [
+        "Built complete SaaS with RBAC (admin, boat_manager, boat_captain, boat_owner) and user invitation system.",
+        "Implemented event calendar with day/week/month views using React Big Calendar.",
+        "Cutting-edge stack: Next.js 15, React 19, tRPC 11 with Supabase auth and role-aware queries.",
+      ],
+      fr: [
+        "Construction d'un SaaS complet avec RBAC (admin, boat_manager, boat_captain, boat_owner) et système d'invitation.",
+        "Implémentation d'un calendrier d'événements avec vues jour/semaine/mois via React Big Calendar.",
+        "Stack cutting-edge : Next.js 15, React 19, tRPC 11 avec auth Supabase et requêtes role-aware.",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: { live: "https://dev.boatmanager.io/", repo: null },
   },
   {
     slug: "dealbreaker",
@@ -336,39 +385,6 @@ export const projects: Project[] = [
     accessNote: {
       en: "Advisor tooling — authentication required",
       fr: "Outil conseiller — authentification requise",
-    },
-    links: { live: null, repo: null },
-  },
-  {
-    slug: "boat-manager",
-    title: "Boat Manager",
-    oneLiner: {
-      en: "SaaS platform for fleet management and reservations — cutting-edge stack with role-based access.",
-      fr: "Plateforme SaaS de gestion de flotte et réservations — stack cutting-edge avec contrôle d'accès par rôles.",
-    },
-    category: "platform",
-    role: {
-      en: "Full Stack Developer — end-to-end ownership",
-      fr: "Développeur Full Stack — ownership end-to-end",
-    },
-    timeframe: "2025",
-    stack: ["Next.js 15", "React 19", "TypeScript", "tRPC 11", "Supabase", "Drizzle", "shadcn/ui"],
-    highlights: {
-      en: [
-        "Built complete SaaS with RBAC (admin, boat_manager, boat_captain, boat_owner) and user invitation system.",
-        "Implemented event calendar with day/week/month views using React Big Calendar.",
-        "Cutting-edge stack: Next.js 15, React 19, tRPC 11 with Supabase auth and role-aware queries.",
-      ],
-      fr: [
-        "Construction d'un SaaS complet avec RBAC (admin, boat_manager, boat_captain, boat_owner) et système d'invitation.",
-        "Implémentation d'un calendrier d'événements avec vues jour/semaine/mois via React Big Calendar.",
-        "Stack cutting-edge : Next.js 15, React 19, tRPC 11 avec auth Supabase et requêtes role-aware.",
-      ],
-    },
-    access: "restricted",
-    accessNote: {
-      en: "Private project — in development",
-      fr: "Projet privé — en développement",
     },
     links: { live: null, repo: null },
   },
