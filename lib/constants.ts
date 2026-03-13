@@ -47,6 +47,32 @@ export const experience = [
     ],
   },
   {
+    company: "Boat Manager",
+    role: {
+      en: "Full Stack Developer (Freelance)",
+      fr: "Développeur Full Stack (Freelance)",
+    },
+    period: { start: "2025", end: "2025" },
+    description: {
+      en: "Built a SaaS fleet management and booking platform from scratch with role-based access control (admin, boat_manager, boat_captain, boat_owner), invitation system, and event calendar with day/week/month views.",
+      fr: "Construction d'une plateforme SaaS de gestion de flotte et de réservations from scratch avec contrôle d'accès par rôles (admin, boat_manager, boat_captain, boat_owner), système d'invitation et calendrier d'événements avec vues jour/semaine/mois.",
+    },
+    technologies: ["Next.js 15", "React 19", "TypeScript", "tRPC 11", "Supabase", "Drizzle", "shadcn/ui"],
+  },
+  {
+    company: "StartMinting",
+    role: {
+      en: "Full Stack Developer",
+      fr: "Développeur Full Stack",
+    },
+    period: { start: "2023", end: "2023" },
+    description: {
+      en: "Built Web3 DeFi platform for tokenized Bitcoin mining investments. Developed ERC-721 NFT smart contracts, staking pools with BTC rewards, and multi-payment support (ETH, stablecoins, fiat).",
+      fr: "Développement d'une plateforme Web3 DeFi pour l'investissement en mining Bitcoin tokenisé. Création de smart contracts ERC-721, pools de staking avec récompenses BTC et support multi-paiement (ETH, stablecoins, fiat).",
+    },
+    technologies: ["Solidity", "Next.js", "TypeScript", "Wagmi", "Hardhat", "Chainlink", "Firebase"],
+  },
+  {
     company: "Studio Ambiant",
     role: {
       en: "Full Stack Developer",
@@ -84,19 +110,6 @@ export const experience = [
       fr: "Développement d'applications React et APIs Node pour des campagnes marketing d'influence pour grandes marques. Responsabilité full stack en environnement agence.",
     },
     technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "MongoDB", "Docker"],
-  },
-  {
-    company: "StartMinting",
-    role: {
-      en: "Full Stack Developer",
-      fr: "Développeur Full Stack",
-    },
-    period: { start: "2023", end: "2023" },
-    description: {
-      en: "Built Web3 DeFi platform for tokenized Bitcoin mining investments. Developed ERC-721 NFT smart contracts, staking pools with BTC rewards, and multi-payment support (ETH, stablecoins, fiat).",
-      fr: "Développement d'une plateforme Web3 DeFi pour l'investissement en mining Bitcoin tokenisé. Création de smart contracts ERC-721, pools de staking avec récompenses BTC et support multi-paiement (ETH, stablecoins, fiat).",
-    },
-    technologies: ["Solidity", "Next.js", "TypeScript", "Wagmi", "Hardhat", "Chainlink", "Firebase"],
   },
 ];
 
@@ -365,12 +378,9 @@ export const projects: Project[] = [
         "Stack cutting-edge : Next.js 15, React 19, tRPC 11 avec auth Supabase et requêtes role-aware.",
       ],
     },
-    access: "restricted",
-    accessNote: {
-      en: "Private project — in development",
-      fr: "Projet privé — en développement",
-    },
-    links: { live: null, repo: null },
+    access: "public",
+    accessNote: null,
+    links: { live: "https://dev.boatmanager.io/", repo: null },
   },
   {
     slug: "garance-mobile-app",
