@@ -2,44 +2,77 @@
 
 import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
+import { motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 import { useI18n } from "@/lib/i18n";
 import { ROUTES } from "@/lib/routes";
 
+const heroVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const lineVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring" as const,
+      stiffness: 260,
+      damping: 28,
+    },
+  },
+};
+
 export const Hero = () => {
   const { t } = useI18n();
 
   return (
-    <section className="py-12 sm:py-20 lg:py-32">
-      <div className="space-y-6">
-        <Typography
-          variant="muted"
-          className="animate-fade-in opacity-0"
+    <section className="py-10 sm:py-16 lg:py-24">
+      <motion.div
+        className="space-y-6"
+        variants={heroVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div variants={lineVariant}>
+          <Typography variant="muted">{t.hero.greeting}</Typography>
+        </motion.div>
+
+        <motion.div variants={lineVariant}>
+          <Typography
+            variant="h1"
+            as="h1"
+            className="sm:text-5xl lg:text-6xl"
+          >
+            {t.meta.name}
+          </Typography>
+        </motion.div>
+
+        <motion.div variants={lineVariant}>
+          <Typography variant="lead" className="sm:text-2xl">
+            {t.meta.role} &mdash; {t.meta.tagline}
+          </Typography>
+        </motion.div>
+
+        <motion.div variants={lineVariant}>
+          <Typography variant="body-large" className="max-w-2xl">
+            {t.hero.description}
+          </Typography>
+        </motion.div>
+
+        <motion.div
+          className="flex flex-wrap gap-4 pt-4"
+          variants={lineVariant}
         >
-          {t.hero.greeting}
-        </Typography>
-        <Typography
-          variant="h1"
-          as="h1"
-          className="animate-fade-in-up opacity-0 animation-delay-100 sm:text-5xl lg:text-6xl"
-        >
-          {t.meta.name}
-        </Typography>
-        <Typography
-          variant="lead"
-          className="animate-fade-in-up opacity-0 animation-delay-200 sm:text-2xl"
-        >
-          {t.meta.role} &mdash; {t.meta.tagline}
-        </Typography>
-        <Typography
-          variant="body-large"
-          className="animate-fade-in-up max-w-2xl opacity-0 animation-delay-300"
-        >
-          {t.hero.description}
-        </Typography>
-        <div className="animate-fade-in-up flex flex-wrap gap-4 pt-4 opacity-0 animation-delay-400">
           <Button asChild>
             <Link href={ROUTES.cv}>
               {t.hero.cta}
@@ -52,8 +85,8 @@ export const Hero = () => {
               {t.hero.contact}
             </Link>
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
