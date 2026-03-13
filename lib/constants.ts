@@ -254,6 +254,36 @@ export const projects: Project[] = [
     links: { live: null, repo: null },
   },
   {
+    slug: "boat-manager",
+    title: "Boat Manager",
+    oneLiner: {
+      en: "SaaS platform for fleet management and reservations — cutting-edge stack with role-based access.",
+      fr: "Plateforme SaaS de gestion de flotte et réservations — stack cutting-edge avec contrôle d'accès par rôles.",
+    },
+    category: "platform",
+    role: {
+      en: "Full Stack Developer — end-to-end ownership",
+      fr: "Développeur Full Stack — ownership end-to-end",
+    },
+    timeframe: "2025",
+    stack: ["Next.js 15", "React 19", "TypeScript", "tRPC 11", "Supabase", "Drizzle", "shadcn/ui"],
+    highlights: {
+      en: [
+        "Built complete SaaS with RBAC (admin, boat_manager, boat_captain, boat_owner) and user invitation system.",
+        "Implemented event calendar with day/week/month views using React Big Calendar.",
+        "Cutting-edge stack: Next.js 15, React 19, tRPC 11 with Supabase auth and role-aware queries.",
+      ],
+      fr: [
+        "Construction d'un SaaS complet avec RBAC (admin, boat_manager, boat_captain, boat_owner) et système d'invitation.",
+        "Implémentation d'un calendrier d'événements avec vues jour/semaine/mois via React Big Calendar.",
+        "Stack cutting-edge : Next.js 15, React 19, tRPC 11 avec auth Supabase et requêtes role-aware.",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: { live: "https://dev.boatmanager.io/", repo: null },
+  },
+  {
     slug: "dealbreaker",
     title: "Dealbreaker",
     oneLiner: {
@@ -351,36 +381,6 @@ export const projects: Project[] = [
       fr: "Outil conseiller — authentification requise",
     },
     links: { live: null, repo: null },
-  },
-  {
-    slug: "boat-manager",
-    title: "Boat Manager",
-    oneLiner: {
-      en: "SaaS platform for fleet management and reservations — cutting-edge stack with role-based access.",
-      fr: "Plateforme SaaS de gestion de flotte et réservations — stack cutting-edge avec contrôle d'accès par rôles.",
-    },
-    category: "platform",
-    role: {
-      en: "Full Stack Developer — end-to-end ownership",
-      fr: "Développeur Full Stack — ownership end-to-end",
-    },
-    timeframe: "2025",
-    stack: ["Next.js 15", "React 19", "TypeScript", "tRPC 11", "Supabase", "Drizzle", "shadcn/ui"],
-    highlights: {
-      en: [
-        "Built complete SaaS with RBAC (admin, boat_manager, boat_captain, boat_owner) and user invitation system.",
-        "Implemented event calendar with day/week/month views using React Big Calendar.",
-        "Cutting-edge stack: Next.js 15, React 19, tRPC 11 with Supabase auth and role-aware queries.",
-      ],
-      fr: [
-        "Construction d'un SaaS complet avec RBAC (admin, boat_manager, boat_captain, boat_owner) et système d'invitation.",
-        "Implémentation d'un calendrier d'événements avec vues jour/semaine/mois via React Big Calendar.",
-        "Stack cutting-edge : Next.js 15, React 19, tRPC 11 avec auth Supabase et requêtes role-aware.",
-      ],
-    },
-    access: "public",
-    accessNote: null,
-    links: { live: "https://dev.boatmanager.io/", repo: null },
   },
   {
     slug: "garance-mobile-app",
