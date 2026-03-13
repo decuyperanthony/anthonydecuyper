@@ -119,6 +119,59 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  // === PERSONAL / FLAGSHIP ===
+  {
+    slug: "salaireclair",
+    title: "SalaireClair",
+    oneLiner: {
+      en: "Gross-to-net salary simulator for France, Belgium, Switzerland & Luxembourg. Built solo from scratch — design, dev, SEO & content.",
+      fr: "Simulateur de salaire brut-net pour la France, la Belgique, la Suisse et le Luxembourg. Conçu seul de A à Z — design, dev, SEO et contenu.",
+    },
+    category: "personal",
+    role: {
+      en: "Solo Creator — design, development, SEO, content",
+      fr: "Créateur Solo — design, développement, SEO, contenu",
+    },
+    timeframe: "2025",
+    stack: [
+      "Next.js 16",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "shadcn/ui",
+      "next-intl",
+      "Framer Motion",
+      "Vitest",
+      "Testing Library",
+      "MDX",
+      "jsPDF",
+      "Zod",
+      "GitHub Actions",
+      "Vercel",
+    ],
+    highlights: {
+      en: [
+        "Salary engine covering 4 countries × 4 statuses with bidirectional calculation (gross→net and net→gross), validated against real payslips.",
+        "Design system from scratch: 15+ reusable components (CVA polymorphic Typography, DataTable, CurrencyInput, PillRadioGroup...).",
+        "SEO: Lighthouse 100/100/100/100, Schema.org (FAQ, BreadcrumbList, WebApplication), dynamic OG images, 42 internal cross-links.",
+        "210 unit tests, TypeScript strict (zero any, zero as), Zod validation at boundaries.",
+        "37 MDX blog articles with country-based topic clusters and GSC-driven content strategy.",
+        "WCAG AA native: skip-to-content, aria-labels, full keyboard navigation, OKLch dark mode.",
+        "65 PRs merged in 2 weeks — solo end-to-end (design → dev → SEO → content).",
+      ],
+      fr: [
+        "Moteur de calcul couvrant 4 pays × 4 statuts avec calcul bidirectionnel (brut→net et net→brut), validé contre de vrais bulletins de paie.",
+        "Design system from scratch : 15+ composants réutilisables (Typography CVA polymorphe, DataTable, CurrencyInput, PillRadioGroup...).",
+        "SEO : Lighthouse 100/100/100/100, Schema.org (FAQ, BreadcrumbList, WebApplication), images OG dynamiques, 42 liens internes.",
+        "210 tests unitaires, TypeScript strict (zéro any, zéro as), validation Zod aux frontières.",
+        "37 articles de blog MDX avec clusters thématiques par pays et stratégie de contenu pilotée par GSC.",
+        "WCAG AA natif : skip-to-content, aria-labels, navigation clavier complète, dark mode OKLch.",
+        "65 PRs mergées en 2 semaines — solo end-to-end (design → dev → SEO → contenu).",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: { live: "https://salaireclair.fr/", repo: null },
+  },
   // === CURRENT / FLAGSHIP ===
   {
     slug: "polyseme-v2",
