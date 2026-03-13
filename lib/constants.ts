@@ -52,7 +52,7 @@ export const experience = [
       en: "Full Stack Developer (Freelance)",
       fr: "Développeur Full Stack (Freelance)",
     },
-    period: { start: "2025", end: "2025" },
+    period: { start: "2025", end: null },
     description: {
       en: "Built a SaaS fleet management and booking platform from scratch with role-based access control (admin, boat_manager, boat_captain, boat_owner), invitation system, and event calendar with day/week/month views.",
       fr: "Construction d'une plateforme SaaS de gestion de flotte et de réservations from scratch avec contrôle d'accès par rôles (admin, boat_manager, boat_captain, boat_owner), système d'invitation et calendrier d'événements avec vues jour/semaine/mois.",
