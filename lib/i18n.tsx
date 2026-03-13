@@ -4,6 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useSyncExternalStore,
   type ReactNode,
 } from "react";
@@ -92,6 +93,10 @@ export const I18nProvider = ({ children }: I18nProviderProps) => {
     localStorage.setItem(STORAGE_KEY, newLocale);
     window.dispatchEvent(new Event("storage"));
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   const value: I18nContextType = {
     locale,

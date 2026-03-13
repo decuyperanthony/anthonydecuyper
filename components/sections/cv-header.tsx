@@ -17,7 +17,7 @@ export const CVHeader = () => {
       </div>
       <div className="hidden print:block">
         <div className="py-8 text-center">
-          <Typography variant="h2" as="h1">
+          <Typography variant="h2" as="h2">
             {t.meta.name}
           </Typography>
           <Typography variant="body">

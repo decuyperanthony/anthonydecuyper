@@ -21,11 +21,11 @@ export const MobileNav = ({ open, onOpenChange }: MobileNavProps) => {
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-72">
+      <SheetContent id="mobile-nav" side="right" className="w-72">
         <SheetHeader>
           <SheetTitle>{t.meta.name}</SheetTitle>
         </SheetHeader>
-        <nav className="flex flex-col gap-2 px-4">
+        <nav aria-label="Mobile" className="flex flex-col gap-2 px-4">
           {navItems.map((item) => (
             <NavLink
               key={item.href}

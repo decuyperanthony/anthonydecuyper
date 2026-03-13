@@ -13,9 +13,9 @@ export const Education = () => {
         <Typography variant="h3" as="h2">
           {t.cv.education}
         </Typography>
-        <div className="space-y-6">
+        <ul className="space-y-6">
           {education.map((item, index) => (
-            <div key={index} className="space-y-1">
+            <li key={index} className="space-y-1">
               <Typography variant="body-large" as="h3" className="font-semibold">
                 {item.institution}
               </Typography>
@@ -25,18 +25,18 @@ export const Education = () => {
               <Typography variant="muted">
                 {item.period.start} &mdash; {item.period.end}
               </Typography>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       <div className="space-y-6">
         <Typography variant="h3" as="h2">
           {t.cv.languages}
         </Typography>
-        <div className="space-y-2">
+        <ul className="space-y-2">
           {languages.map((lang, index) => (
-            <div key={index} className="flex items-center gap-2">
+            <li key={index} className="flex items-center gap-2">
               <Typography variant="body" as="span" className="font-medium">
                 {lang.name[locale]}
               </Typography>
@@ -44,9 +44,9 @@ export const Education = () => {
               <Typography variant="muted" as="span">
                 {lang.level[locale]}
               </Typography>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

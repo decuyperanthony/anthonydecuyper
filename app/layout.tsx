@@ -55,10 +55,6 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Anthony DC",
   },
-  icons: {
-    icon: [{ url: "/icons/icon.svg", type: "image/svg+xml" }],
-    apple: "/icons/apple-touch-icon.png",
-  },
 };
 
 export const viewport: Viewport = {

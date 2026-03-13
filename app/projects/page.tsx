@@ -9,11 +9,13 @@ export const metadata = {
 
 const ProjectsPage = () => (
   <PageLayout titleKey="projects" descriptionKey="projects">
-    <div className="grid gap-8 lg:grid-cols-2">
+    <ul role="list" className="grid gap-8 lg:grid-cols-2">
       {projects.map((project) => (
-        <ProjectShowcase key={project.slug} {...project} />
+        <li key={project.slug}>
+          <ProjectShowcase {...project} />
+        </li>
       ))}
-    </div>
+    </ul>
   </PageLayout>
 );
 

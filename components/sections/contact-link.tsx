@@ -19,7 +19,7 @@ export const ContactLink = ({ icon: Icon, label, href, value }: ContactLinkProps
     asChild
   >
     <a href={href} target="_blank" rel="noopener noreferrer">
-      <Icon className="size-5 text-muted-foreground" />
+      <Icon className="size-5 text-muted-foreground" aria-hidden="true" />
       <div className="flex flex-col items-start">
         <Typography variant="body-small" as="span" className="font-medium">
           {label}
@@ -28,6 +28,7 @@ export const ContactLink = ({ icon: Icon, label, href, value }: ContactLinkProps
           {value}
         </Typography>
       </div>
+      <span className="sr-only">(opens in new tab)</span>
     </a>
   </Button>
 );

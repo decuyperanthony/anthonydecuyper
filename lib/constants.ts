@@ -27,8 +27,8 @@ export const experience = [
   {
     company: "Germen",
     role: {
-      en: "Frontend Lead",
-      fr: "Lead Frontend",
+      en: "Lead Frontend Engineer",
+      fr: "Lead Frontend Engineer",
     },
     period: { start: "2021", end: null },
     description: {
@@ -94,7 +94,7 @@ export const experience = [
     period: { start: "2022", end: "2022" },
     description: {
       en: "Built humanitarian logistics platform coordinating donation collection and transport to Ukraine border during active crisis response.",
-      fr: "Contribution à une plateforme logistique humanitaire pour coordonner la collecte et le transport de dons vers la frontière ukrainienne.",
+      fr: "Plateforme développée en réponse à la crise ukrainienne pour coordonner la collecte et l'acheminement de dons humanitaires. Développement frontend React avec backend Node.js/MongoDB sous délais serrés.",
     },
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind"],
   },
