@@ -61,7 +61,7 @@ export const PageLayout = ({
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className={cn("flex-1 py-6 sm:py-12", className)}>
+      <main id="main-content" className={cn("flex-1 py-6 sm:py-12", className)}>
         <PageContainer>
           {titleKey && (
             <div className="space-y-3 pb-8 sm:space-y-4 sm:pb-10">

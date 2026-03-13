@@ -15,7 +15,7 @@ export const CVDownload = () => {
   return (
     <Button asChild>
       <a href={CV_FILES[locale]} download>
-        <Download className="size-4" />
+        <Download className="size-4" aria-hidden="true" />
         {t.cv.download}
       </a>
     </Button>

@@ -13,9 +13,9 @@ export const Experience = () => {
       <Typography variant="h3" as="h2">
         {t.experience.title}
       </Typography>
-      <div className="space-y-8">
+      <ul className="space-y-8">
         {experience.map((item, index) => (
-          <div
+          <li
             key={index}
             className="relative border-l-2 border-border pl-6 pb-8 last:pb-0"
           >
@@ -44,9 +44,9 @@ export const Experience = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 };

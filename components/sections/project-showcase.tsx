@@ -18,7 +18,7 @@ const categoryColors: Record<ProjectCategory, string> = {
   mobile: "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20",
   partner: "bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20",
   volunteer: "bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20",
-  personal: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20",
+  personal: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border-cyan-500/20",
 };
 
 const categoryGlow: Record<ProjectCategory, string> = {
@@ -122,17 +122,17 @@ export const ProjectShowcase = ({
               <>
                 <button
                   onClick={prevImage}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white/80 opacity-0 backdrop-blur-sm transition-all hover:bg-black/70 hover:text-white group-hover:opacity-100"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white/80 opacity-0 backdrop-blur-sm transition-all hover:bg-black/70 hover:text-white group-hover:opacity-100 focus-visible:opacity-100"
                   aria-label="Previous image"
                 >
-                  <ChevronLeft className="size-4" />
+                  <ChevronLeft className="size-4" aria-hidden="true" />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white/80 opacity-0 backdrop-blur-sm transition-all hover:bg-black/70 hover:text-white group-hover:opacity-100"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white/80 opacity-0 backdrop-blur-sm transition-all hover:bg-black/70 hover:text-white group-hover:opacity-100 focus-visible:opacity-100"
                   aria-label="Next image"
                 >
-                  <ChevronRight className="size-4" />
+                  <ChevronRight className="size-4" aria-hidden="true" />
                 </button>
               </>
             )}
@@ -148,7 +148,7 @@ export const ProjectShowcase = ({
                       setCurrentImageIndex(idx);
                     }}
                     className={cn(
-                      "size-1.5 rounded-full transition-all",
+                      "size-1.5 rounded-full transition-all focus-visible:opacity-100",
                       idx === currentImageIndex
                         ? "w-4 bg-white"
                         : "bg-white/40 hover:bg-white/60"
@@ -189,9 +189,9 @@ export const ProjectShowcase = ({
         <div className="relative flex flex-1 flex-col gap-4 p-5">
           {/* Title & Role */}
           <div>
-            <h3 className="text-xl font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary">
+            <h2 className="text-xl font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary">
               {title}
-            </h3>
+            </h2>
             <p className="mt-1 text-sm text-muted-foreground">{role[locale]}</p>
           </div>
 
@@ -228,9 +228,9 @@ export const ProjectShowcase = ({
             {access !== "public" && accessNote && (
               <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                 {access === "restricted" ? (
-                  <Lock className="size-3" />
+                  <Lock className="size-3" aria-hidden="true" />
                 ) : (
-                  <ShieldOff className="size-3" />
+                  <ShieldOff className="size-3" aria-hidden="true" />
                 )}
                 <span>{accessNote[locale]}</span>
               </div>
@@ -246,8 +246,9 @@ export const ProjectShowcase = ({
                   >
                     <a href={links.live} target="_blank" rel="noopener noreferrer">
                       <span className="relative z-10 flex items-center gap-2">
-                        <ExternalLink className="size-4" />
+                        <ExternalLink className="size-4" aria-hidden="true" />
                         {t.projects.viewProject}
+                        <span className="sr-only">(opens in new tab)</span>
                       </span>
                     </a>
                   </Button>
@@ -255,8 +256,9 @@ export const ProjectShowcase = ({
                 {links.repo && (
                   <Button variant="outline" size="sm" asChild>
                     <a href={links.repo} target="_blank" rel="noopener noreferrer">
-                      <Github className="size-4" />
+                      <Github className="size-4" aria-hidden="true" />
                       {t.projects.viewCode}
+                      <span className="sr-only">(opens in new tab)</span>
                     </a>
                   </Button>
                 )}

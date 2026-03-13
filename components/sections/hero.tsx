@@ -43,12 +43,12 @@ export const Hero = () => {
           <Button asChild>
             <Link href={ROUTES.cv}>
               {t.hero.cta}
-              <ArrowRight className="size-4" />
+              <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </Button>
           <Button variant="outline" asChild>
             <Link href={ROUTES.contact}>
-              <Mail className="size-4" />
+              <Mail className="size-4" aria-hidden="true" />
               {t.hero.contact}
             </Link>
           </Button>

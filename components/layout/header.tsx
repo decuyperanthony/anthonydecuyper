@@ -20,7 +20,14 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
+    <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+      >
+        Skip to content
+      </a>
+      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
       <PageContainer>
         <div className="flex h-14 items-center justify-between">
           <Link
@@ -32,7 +39,7 @@ export const Header = () => {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => (
               <NavLink key={item.href} href={item.href} navKey={item.key} />
             ))}
@@ -53,8 +60,10 @@ export const Header = () => {
               size="icon"
               onClick={() => setIsOpen(true)}
               aria-label="Open menu"
+              aria-expanded={isOpen}
+              aria-controls="mobile-nav"
             >
-              <Menu className="size-5" />
+              <Menu className="size-5" aria-hidden="true" />
             </Button>
           </div>
 
@@ -62,5 +71,6 @@ export const Header = () => {
         </div>
       </PageContainer>
     </header>
+    </>
   );
 };

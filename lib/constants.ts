@@ -27,8 +27,8 @@ export const experience = [
   {
     company: "Germen",
     role: {
-      en: "Frontend Lead",
-      fr: "Lead Frontend",
+      en: "Lead Frontend Engineer",
+      fr: "Lead Frontend Engineer",
     },
     period: { start: "2021", end: null },
     description: {
@@ -52,7 +52,7 @@ export const experience = [
       en: "Full Stack Developer (Freelance)",
       fr: "Développeur Full Stack (Freelance)",
     },
-    period: { start: "2025", end: "2025" },
+    period: { start: "2025", end: null },
     description: {
       en: "Built a SaaS fleet management and booking platform from scratch with role-based access control (admin, boat_manager, boat_captain, boat_owner), invitation system, and event calendar with day/week/month views.",
       fr: "Construction d'une plateforme SaaS de gestion de flotte et de réservations from scratch avec contrôle d'accès par rôles (admin, boat_manager, boat_captain, boat_owner), système d'invitation et calendrier d'événements avec vues jour/semaine/mois.",
@@ -94,7 +94,7 @@ export const experience = [
     period: { start: "2022", end: "2022" },
     description: {
       en: "Built humanitarian logistics platform coordinating donation collection and transport to Ukraine border during active crisis response.",
-      fr: "Contribution à une plateforme logistique humanitaire pour coordonner la collecte et le transport de dons vers la frontière ukrainienne.",
+      fr: "Plateforme développée en réponse à la crise ukrainienne pour coordonner la collecte et l'acheminement de dons humanitaires. Développement frontend React avec backend Node.js/MongoDB sous délais serrés.",
     },
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind"],
   },
