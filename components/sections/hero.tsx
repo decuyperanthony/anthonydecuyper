@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
+import { MagneticButton } from "@/components/animations/magnetic-button";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 import { useI18n } from "@/lib/i18n";
 import { ROUTES } from "@/lib/routes";
+import { staggerContainer, wordReveal } from "@/components/animations/variants";
 
 const heroVariants = {
   hidden: {},
@@ -32,8 +34,15 @@ const lineVariant = {
   },
 };
 
+// Stagger the words of the name with a tighter 60ms gap
+const nameContainer = staggerContainer(0.06, 0.15);
+
 export const Hero = () => {
   const { t } = useI18n();
+  const prefersReducedMotion = useReducedMotion();
+
+  // Split the name into words for the staggered reveal
+  const nameWords = t.meta.name.split(" ");
 
   return (
     <section className="py-10 sm:py-16 lg:py-24">
@@ -47,14 +56,38 @@ export const Hero = () => {
           <Typography variant="muted">{t.hero.greeting}</Typography>
         </motion.div>
 
-        <motion.div variants={lineVariant}>
-          <Typography
-            variant="h1"
-            as="h1"
-            className="sm:text-5xl lg:text-6xl"
-          >
-            {t.meta.name}
-          </Typography>
+        {/* Cinematic name reveal — each word wipes up from a clipping mask */}
+        <motion.div variants={lineVariant} aria-label={t.meta.name}>
+          {prefersReducedMotion ? (
+            <Typography variant="h1" as="h1" className="sm:text-5xl lg:text-6xl">
+              {t.meta.name}
+            </Typography>
+          ) : (
+            <h1
+              className="scroll-m-20 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
+              aria-label={t.meta.name}
+            >
+              <motion.span
+                className="flex flex-wrap gap-x-[0.3em]"
+                variants={nameContainer}
+                initial="hidden"
+                animate="visible"
+                aria-hidden="true"
+              >
+                {nameWords.map((word, i) => (
+                  // Overflow hidden clips the rising word
+                  <span key={i} className="overflow-hidden pb-1">
+                    <motion.span
+                      className="inline-block"
+                      variants={wordReveal}
+                    >
+                      {word}
+                    </motion.span>
+                  </span>
+                ))}
+              </motion.span>
+            </h1>
+          )}
         </motion.div>
 
         <motion.div variants={lineVariant}>
@@ -73,18 +106,22 @@ export const Hero = () => {
           className="flex flex-wrap gap-4 pt-4"
           variants={lineVariant}
         >
-          <Button asChild>
-            <Link href={ROUTES.cv}>
-              {t.hero.cta}
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href={ROUTES.contact}>
-              <Mail className="size-4" aria-hidden="true" />
-              {t.hero.contact}
-            </Link>
-          </Button>
+          <MagneticButton>
+            <Button asChild>
+              <Link href={ROUTES.cv}>
+                {t.hero.cta}
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
+            </Button>
+          </MagneticButton>
+          <MagneticButton>
+            <Button variant="outline" asChild>
+              <Link href={ROUTES.contact}>
+                <Mail className="size-4" aria-hidden="true" />
+                {t.hero.contact}
+              </Link>
+            </Button>
+          </MagneticButton>
         </motion.div>
       </motion.div>
     </section>

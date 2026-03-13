@@ -76,3 +76,34 @@ export const pageEntrance: Variants = {
     transition: { duration: 0.35, ease: ease.out },
   },
 };
+
+// ─── Clip-path wipe reveal (hero name) ──────────────────────────────────────
+// Reveals text from left to right via clip-path — cinematic "wipe in" effect.
+export const clipReveal: Variants = {
+  hidden: {
+    clipPath: "inset(0 100% 0 0)",
+    opacity: 1,
+  },
+  visible: {
+    clipPath: "inset(0 0% 0 0)",
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.16, 1, 0.3, 1], // expo-out — fast start, elegant settle
+    },
+  },
+};
+
+// ─── Word slide-up (hero name split) ────────────────────────────────────────
+// Each word clips up from an invisible mask. Parent must use staggerContainer.
+export const wordReveal: Variants = {
+  hidden: { y: "110%", opacity: 0 },
+  visible: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      duration: 0.55,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};

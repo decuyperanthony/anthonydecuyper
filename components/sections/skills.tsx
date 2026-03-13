@@ -79,8 +79,16 @@ export const Skills = () => {
                 <motion.div
                   key={skill}
                   variants={scaleIn}
-                  whileHover={{ scale: 1.06 }}
-                  transition={{ duration: 0.15 }}
+                  whileHover={{
+                    scale: 1.08,
+                    y: -2,
+                    filter: "drop-shadow(0 4px 8px oklch(0.5 0.1 264 / 0.25))",
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 320,
+                    damping: 20,
+                  }}
                 >
                   <Badge variant="secondary">{skill}</Badge>
                 </motion.div>

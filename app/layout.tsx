@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
+import { PageTransition } from "@/components/animations/page-transition";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/lib/i18n";
 
@@ -72,7 +73,9 @@ const RootLayout = ({
   <html lang="en" suppressHydrationWarning>
     <body className={`${inter.variable} font-sans antialiased`}>
       <ThemeProvider>
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          <PageTransition>{children}</PageTransition>
+        </I18nProvider>
       </ThemeProvider>
     </body>
   </html>
