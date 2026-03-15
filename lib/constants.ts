@@ -32,8 +32,8 @@ export const experience = [
     },
     period: { start: "2021", end: null },
     description: {
-      en: "Led frontend architecture across 10 production applications and 8 shared packages. Managed team of 4 engineers. Built design system (25+ components) and delivered compliant subscription flows for 3 insurers (Kelia, Quanta, Garance). Shipped React Native mobile app.",
-      fr: "Direction de l'architecture frontend sur 10 applications en production et 8 packages partagés. Encadrement d'une équipe de 4 développeurs. Conception du design system (25+ composants) et livraison de parcours de souscription conformes pour 3 assureurs (Kelia, Quanta, Garance). Développement d'une application mobile React Native.",
+      en: "Led frontend architecture across 10 production applications and 8 shared packages. Managed team of 4 engineers. Built design system (reusable components) and delivered compliant subscription flows for multiple insurance providers. Shipped React Native mobile app.",
+      fr: "Direction de l'architecture frontend sur 10 applications en production et 8 packages partagés. Encadrement d'une équipe de 4 développeurs. Conception du design system (composants réutilisables) et livraison de parcours de souscription conformes pour plusieurs assureurs. Développement d'une application mobile React Native.",
     },
     technologies: [
       "TypeScript",
@@ -202,19 +202,19 @@ export const projects: Project[] = [
     stack: ["TypeScript", "React", "Next.js", "Turborepo", "Tailwind", "shadcn/ui", "tRPC", "PostgreSQL", "AWS"],
     highlights: {
       en: [
-        "Owned frontend architecture for a multi-insurer subscription platform processing 7,600+ applications across 9 providers with 89% end-to-end conversion rate.",
-        "Built subscription flows handling €76M+ in total premiums with GDPR-compliant validation (Zod) and i18n.",
+        "Owned frontend architecture for a multi-insurer subscription platform for the insurance and savings industry.",
+        "Built subscription flows with GDPR-compliant validation (Zod) and i18n for multiple insurance providers.",
         "Designed and shipped a design system (25+ Radix UI / Tailwind components) adopted across all products, documented via Storybook.",
         "Led a team of 4 frontend engineers: structured code reviews, pair programming, and technical standards.",
-        "Built advisor back-offices serving 395+ active users with RBAC, guardian management, and multi-insurer integrations.",
+        "Built advisor back-offices with RBAC, guardian management, and multi-insurer integrations serving multiple organizations.",
         "Drove migration from CRA + Redux to Turborepo monorepo, then modernized to Next.js App Router, Server Actions, and tRPC.",
       ],
       fr: [
-        "Pilotage de l'architecture frontend d'une plateforme de souscription multi-assureurs traitant 7 600+ dossiers chez 9 assureurs avec un taux de conversion de 89%.",
-        "Construction de parcours de souscription représentant 76M€+ de primes totales avec validation RGPD (Zod) et i18n.",
-        "Conception et livraison d'un design system (25+ composants Radix UI / Tailwind) adopté sur tous les produits, documenté via Storybook.",
+        "Pilotage de l'architecture frontend d'une plateforme de souscription multi-assureurs pour le secteur de l'assurance et de l'épargne.",
+        "Construction de parcours de souscription avec validation RGPD (Zod) et i18n pour plusieurs assureurs.",
+        "Conception et livraison d'un design system (composants réutilisables Radix UI / Tailwind) adopté sur tous les produits, documenté via Storybook.",
         "Management de 4 développeurs frontend : code reviews structurées, pair programming et standards techniques.",
-        "Construction de back-offices conseillers servant 395+ utilisateurs actifs avec RBAC, gestion de tutelles et intégrations multi-assureurs.",
+        "Construction de back-offices conseillers avec RBAC, gestion de tutelles et intégrations multi-assureurs desservant plusieurs organisations.",
         "Migration de CRA + Redux vers monorepo Turborepo, puis modernisation vers Next.js App Router, Server Actions et tRPC.",
       ],
     },
