@@ -3,6 +3,7 @@
 import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, ExternalLink, Github, Lock, ShieldOff } from "lucide-react";
+import { motion, useReducedMotion, useSpring, useTransform, useMotionValue } from "motion/react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -48,6 +49,20 @@ export const ProjectShowcase = ({
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const prefersReducedMotion = useReducedMotion();
+
+  // ── 3D tilt — spring-driven, max 3.5° rotation ───────────────────────────
+  // Raw motion values (0–1 normalized relative to card center)
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+
+  // Spring smoothing for the tilt so it trails the cursor elegantly
+  const springX = useSpring(rawX, { stiffness: 160, damping: 22 });
+  const springY = useSpring(rawY, { stiffness: 160, damping: 22 });
+
+  // Map [-1, 1] → [-3.5deg, 3.5deg] — rotateX is driven by vertical delta
+  const rotateX = useTransform(springY, [-1, 1], [3.5, -3.5]);
+  const rotateY = useTransform(springX, [-1, 1], [-3.5, 3.5]);
 
   const categoryLabel = t.projects.categories[category];
   const hasImages = images && images.length > 0;
@@ -56,11 +71,14 @@ export const ProjectShowcase = ({
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    setMousePosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  }, []);
+    const posX = e.clientX - rect.left;
+    const posY = e.clientY - rect.top;
+    setMousePosition({ x: posX, y: posY });
+
+    // Normalize to [-1, 1] for tilt computation
+    rawX.set((posX / rect.width) * 2 - 1);
+    rawY.set((posY / rect.height) * 2 - 1);
+  }, [rawX, rawY]);
 
   const nextImage = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
@@ -75,11 +93,20 @@ export const ProjectShowcase = ({
   }, [images]);
 
   return (
-    <div
+    <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
+      onMouseLeave={() => {
+        setIsHovering(false);
+        rawX.set(0);
+        rawY.set(0);
+      }}
+      style={
+        prefersReducedMotion
+          ? undefined
+          : { rotateX, rotateY, transformStyle: "preserve-3d", perspective: 800 }
+      }
       className="group relative h-full"
     >
       {/* Animated border glow */}
@@ -267,6 +294,6 @@ export const ProjectShowcase = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

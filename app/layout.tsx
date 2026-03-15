@@ -72,7 +72,9 @@ const RootLayout = ({
   <html lang="en" suppressHydrationWarning>
     <body className={`${inter.variable} font-sans antialiased`}>
       <ThemeProvider>
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          {children}
+        </I18nProvider>
       </ThemeProvider>
     </body>
   </html>
