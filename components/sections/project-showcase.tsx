@@ -262,24 +262,25 @@ export const ProjectShowcase = ({
                 <span>{accessNote[locale]}</span>
               </div>
             )}
-            {(links.live ?? links.repo) && (
-              <div className="flex gap-2">
-                {links.live && (
+            {(links.live?.length ?? links.repo) && (
+              <div className="flex flex-wrap gap-2">
+                {links.live?.map((link) => (
                   <Button
+                    key={link.url}
                     variant="default"
                     size="sm"
                     asChild
                     className="group/btn relative overflow-hidden"
                   >
-                    <a href={links.live} target="_blank" rel="noopener noreferrer">
+                    <a href={link.url} target="_blank" rel="noopener noreferrer">
                       <span className="relative z-10 flex items-center gap-2">
                         <ExternalLink className="size-4" aria-hidden="true" />
-                        {t.projects.viewProject}
+                        {link.label}
                         <span className="sr-only">(opens in new tab)</span>
                       </span>
                     </a>
                   </Button>
-                )}
+                ))}
                 {links.repo && (
                   <Button variant="outline" size="sm" asChild>
                     <a href={links.repo} target="_blank" rel="noopener noreferrer">

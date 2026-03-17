@@ -88,16 +88,16 @@ export const ProjectCard = ({
               <span>{accessNote[locale]}</span>
             </div>
           )}
-          {(links.live ?? links.repo) && (
-            <div className="flex gap-2">
-              {links.live && (
-                <Button variant="outline" size="sm" asChild>
-                  <a href={links.live} target="_blank" rel="noopener noreferrer">
+          {(links.live?.length ?? links.repo) && (
+            <div className="flex flex-wrap gap-2">
+              {links.live?.map((link) => (
+                <Button key={link.url} variant="outline" size="sm" asChild>
+                  <a href={link.url} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="size-4" />
-                    {t.projects.viewProject}
+                    {link.label}
                   </a>
                 </Button>
-              )}
+              ))}
               {links.repo && (
                 <Button variant="ghost" size="sm" asChild>
                   <a href={links.repo} target="_blank" rel="noopener noreferrer">
