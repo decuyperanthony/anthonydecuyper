@@ -116,6 +116,8 @@ export const experience = [
 export type ProjectCategory = "platform" | "advisor-tools" | "mobile" | "partner" | "volunteer" | "personal";
 export type ProjectAccess = "public" | "restricted" | "redacted";
 
+type LiveLink = { label: string; url: string };
+
 export type Project = {
   slug: string;
   title: string;
@@ -127,7 +129,7 @@ export type Project = {
   highlights: { en: string[]; fr: string[] };
   access: ProjectAccess;
   accessNote: { en: string; fr: string } | null;
-  links: { live: string | null; repo: string | null };
+  links: { live: LiveLink[] | null; repo: string | null };
   images?: string[];
 };
 
@@ -137,8 +139,8 @@ export const projects: Project[] = [
     slug: "salaireclair",
     title: "ClairLab (SalaireClair + PrêtClair)",
     oneLiner: {
-      en: "Turborepo monorepo powering SalaireClair (gross-to-net salary simulator for 4 countries) and PrêtClair (mortgage simulator, coming soon) — shared design system, shared utils, solo end-to-end.",
-      fr: "Monorepo Turborepo propulsant SalaireClair (simulateur brut-net pour 4 pays) et PrêtClair (simulateur de prêt immobilier, coming soon) — design system partagé, utils partagées, solo de A à Z.",
+      en: "Turborepo monorepo powering SalaireClair (gross-to-net salary simulator for 4 countries, 1 600+ daily Google impressions) and PrêtClair (mortgage simulator — WIP, live) — shared design system, shared utils, solo end-to-end.",
+      fr: "Monorepo Turborepo propulsant SalaireClair (simulateur brut-net pour 4 pays, 1 600+ impressions Google/jour) et PrêtClair (simulateur de prêt immobilier — WIP, live) — design system partagé, utils partagées, solo de A à Z.",
     },
     category: "personal",
     role: {
@@ -169,25 +171,31 @@ export const projects: Project[] = [
       en: [
         "Monorepo architecture: 2 apps + 3 shared packages (@clairlab/design-system, @clairlab/utils, @clairlab/tsconfig) — adding an app = reuse DS + utils.",
         "Extracted shared design system: 27 UI components + AppHeader/AppFooter shells, themed per-app via OKLch tokens (orange SalaireClair, blue PrêtClair).",
-        "Salary engine covering 4 countries × 4 statuses with bidirectional calculation (gross→net and net→gross), validated against real payslips.",
+        "SalaireClair: salary engine covering 4 countries × 4 statuses with bidirectional calculation (gross→net and net→gross), 38 MDX blog articles, 1 600+ daily Google impressions.",
+        "PrêtClair (WIP — live): mortgage payment simulator, PTZ 2026 simulator, borrowing capacity calculator, rate comparator, and SEO blog.",
         "221 unit tests green, Lighthouse 100/100/100/100, TypeScript strict (zero any, zero as), Zod validation at boundaries.",
         "CI pipeline with Turbo cache: lint + type-check + test + build in parallel across all apps and packages.",
-        "37 MDX blog articles with country-based topic clusters, Schema.org structured data, and GSC-driven content strategy.",
         "70+ PRs — solo end-to-end (architecture → design system → dev → SEO → content).",
       ],
       fr: [
         "Architecture monorepo : 2 apps + 3 packages partagés (@clairlab/design-system, @clairlab/utils, @clairlab/tsconfig) — ajouter une app = réutiliser le DS + utils.",
         "Design system partagé extrait : 27 composants UI + shells AppHeader/AppFooter, thème par app via tokens OKLch (orange SalaireClair, bleu PrêtClair).",
-        "Moteur de calcul couvrant 4 pays × 4 statuts avec calcul bidirectionnel (brut→net et net→brut), validé contre de vrais bulletins de paie.",
+        "SalaireClair : moteur de calcul couvrant 4 pays × 4 statuts avec calcul bidirectionnel (brut→net et net→brut), 38 articles MDX SEO, 1 600+ impressions Google/jour.",
+        "PrêtClair (WIP — live) : simulateur de mensualités de prêt immobilier, simulateur PTZ 2026, capacité d'emprunt, comparateur de taux et blog SEO.",
         "221 tests unitaires green, Lighthouse 100/100/100/100, TypeScript strict (zéro any, zéro as), validation Zod aux frontières.",
         "CI pipeline avec Turbo cache : lint + type-check + test + build en parallèle sur toutes les apps et packages.",
-        "37 articles MDX SEO avec clusters thématiques par pays, données structurées Schema.org et stratégie de contenu pilotée par GSC.",
         "70+ PRs — solo end-to-end (architecture → design system → dev → SEO → contenu).",
       ],
     },
     access: "public",
     accessNote: null,
-    links: { live: "https://salaireclair.fr/", repo: null },
+    links: {
+      live: [
+        { label: "SalaireClair", url: "https://salaireclair.fr/" },
+        { label: "PrêtClair (WIP)", url: "https://pretclair.fr/" },
+      ],
+      repo: null,
+    },
   },
   // === CURRENT / FLAGSHIP ===
   {
@@ -291,7 +299,7 @@ export const projects: Project[] = [
     },
     access: "public",
     accessNote: null,
-    links: { live: "https://dev.boatmanager.io/", repo: null },
+    links: { live: [{ label: "Boat Manager", url: "https://dev.boatmanager.io/" }], repo: null },
   },
   {
     slug: "dealbreaker",
