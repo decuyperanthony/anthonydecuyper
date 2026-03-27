@@ -1,26 +1,82 @@
-# Anthony de Cuyper - Personal Website
+<p align="center">
+  <img src="public/icons/icon-192.png" width="80" alt="Anthony de Cuyper" />
+</p>
 
-A premium portfolio PWA built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4.
+<h1 align="center">anthonydecuyper.dev</h1>
+
+<p align="center">
+  <strong>Personal portfolio and resume — built as a premium PWA</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-black?logo=next.js" alt="Next.js 16" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react" alt="React 19" />
+  <img src="https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-v4-06B6D4?logo=tailwindcss" alt="Tailwind v4" />
+  <img src="https://img.shields.io/badge/PWA-ready-5A0FC8?logo=pwa" alt="PWA Ready" />
+  <img src="https://img.shields.io/badge/Vitest-tested-6E9F18?logo=vitest" alt="Vitest" />
+</p>
+
+---
 
 ## Features
 
-- Dark/Light theme toggle with next-themes
-- Internationalization (English/French) with localStorage persistence
-- PWA support with offline capabilities
-- Print-friendly CV page
-- Responsive design
-- SEO optimized with sitemap and meta tags
+- **Dark / Light theme** with smooth transitions (next-themes)
+- **Internationalization** — English & French with localStorage persistence
+- **PWA** — installable on mobile with offline support
+- **Print-friendly CV** — dedicated `/cv` page optimized for print
+- **Framer Motion animations** — premium micro-interactions and page transitions
+- **WCAG 2.1 AA compliant** — accessible by design
+- **SEO optimized** — dynamic sitemap, meta tags, structured data
+- **Responsive** — mobile-first design
+
+---
 
 ## Tech Stack
 
-- **Framework:** Next.js 16 (App Router)
-- **UI:** React 19, Tailwind CSS v4, shadcn/ui
-- **Styling:** CSS Variables, OKLCH colors
-- **Theme:** next-themes
-- **Icons:** Lucide React
-- **Font:** Inter (Google Fonts)
-- **PWA:** @ducanh2912/next-pwa
-- **Testing:** Vitest, Testing Library
+| Layer | Technology |
+|-------|-----------|
+| **Framework** | [Next.js 16](https://nextjs.org/) (App Router, React 19) |
+| **Language** | TypeScript (strict mode) |
+| **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) + CSS variables (OKLCH) |
+| **Components** | [shadcn/ui](https://ui.shadcn.com/) + [Radix UI](https://radix-ui.com/) |
+| **Animations** | [Framer Motion](https://www.framer.com/motion/) |
+| **Icons** | [Lucide React](https://lucide.dev/) |
+| **Theme** | [next-themes](https://github.com/pacocoursey/next-themes) |
+| **PWA** | [@ducanh2912/next-pwa](https://github.com/nicedayzhu/next-pwa) |
+| **Testing** | [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/) |
+| **Font** | Inter (Google Fonts) |
+
+---
+
+## Architecture
+
+```
+app/
+├── layout.tsx          # Root layout with providers
+├── page.tsx            # Home — Hero, About, Skills, Experience
+├── cv/page.tsx         # Resume — print-optimized
+├── projects/page.tsx   # Projects showcase
+├── contact/page.tsx    # Contact form
+├── globals.css         # Theme tokens (OKLCH, CSS variables)
+└── sitemap.ts          # Dynamic sitemap
+
+components/
+├── ui/                 # Design system (shadcn/ui)
+├── layout/             # Header, Footer, PageContainer
+└── sections/           # Hero, About, Skills, Experience, etc.
+
+lib/
+├── utils.ts            # cn() utility
+├── i18n.tsx            # i18n hook and provider
+└── constants.ts        # Site data (experience, projects, skills)
+
+content/
+├── en.json             # English translations
+└── fr.json             # French translations
+```
+
+---
 
 ## Getting Started
 
@@ -28,7 +84,7 @@ A premium portfolio PWA built with Next.js 16, React 19, TypeScript, and Tailwin
 # Install dependencies
 pnpm install
 
-# Run development server
+# Start development server
 pnpm dev
 
 # Run tests
@@ -37,78 +93,33 @@ pnpm test
 # Type check
 pnpm type-check
 
-# Build for production
+# Production build
 pnpm build
-
-# Start production server
-pnpm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-## Project Structure
-
-```
-app/
-├── layout.tsx          # Root layout with providers
-├── page.tsx            # Home page
-├── cv/page.tsx         # Resume page
-├── projects/page.tsx   # Projects page
-├── contact/page.tsx    # Contact page
-├── globals.css         # Global styles and theme tokens
-└── sitemap.ts          # Dynamic sitemap
-
-components/
-├── ui/                 # shadcn/ui components
-├── layout/             # Header, Footer, PageContainer
-└── sections/           # Page sections (Hero, About, Skills, etc.)
-
-lib/
-├── utils.ts            # cn() utility
-├── i18n.tsx            # i18n hook and provider
-└── constants.ts        # Site data (experience, projects, etc.)
-
-content/
-├── en.json             # English translations
-└── fr.json             # French translations
-
-public/
-├── icons/              # PWA icons
-└── manifest.json       # PWA manifest
-```
+---
 
 ## Customization
 
 ### Content
-Edit the JSON files in `content/` to update translations:
-- `content/en.json` - English content
-- `content/fr.json` - French content
-
-Edit `lib/constants.ts` to update:
-- Skills
-- Experience
-- Projects
-- Contact information
-- Education
-- Languages
+- `content/en.json` / `content/fr.json` — translations
+- `lib/constants.ts` — skills, experience, projects, education, contact info
 
 ### Theme
-The color palette is defined in `app/globals.css` using CSS custom properties.
-Light and dark mode colors are automatically handled via the `.dark` class.
+Color palette defined in `app/globals.css` using CSS custom properties (OKLCH). Dark mode handled via `.dark` class.
 
 ### PWA
-Update `public/manifest.json` to customize the PWA settings.
-Generate proper PNG icons and place them in `public/icons/`.
+Update `public/manifest.json` for PWA settings. Icons in `public/icons/`.
+
+---
 
 ## Deploy
 
-Deploy to Vercel:
+Push to a Git repository connected to [Vercel](https://vercel.com/) for automatic deployments.
 
-```bash
-vercel
-```
-
-Or push to a Git repository connected to Vercel for automatic deployments.
+---
 
 ## License
 
