@@ -134,13 +134,12 @@ export type Project = {
 };
 
 export const projects: Project[] = [
-  // === PERSONAL / FLAGSHIP ===
   {
     slug: "salaireclair",
     title: "ClairLab (SalaireClair + PrêtClair)",
     oneLiner: {
-      en: "Turborepo monorepo powering SalaireClair (gross-to-net salary simulator for 4 countries, 1 600+ daily Google impressions) and PrêtClair (mortgage simulator — WIP, live) — shared design system, shared utils, solo end-to-end.",
-      fr: "Monorepo Turborepo propulsant SalaireClair (simulateur brut-net pour 4 pays, 1 600+ impressions Google/jour) et PrêtClair (simulateur de prêt immobilier — WIP, live) — design system partagé, utils partagées, solo de A à Z.",
+      en: "Turborepo monorepo powering SalaireClair (gross-to-net salary simulator for 4 countries, 1 600+ daily Google impressions) and PrêtClair (mortgage simulator — live) — shared design system, shared utils, solo end-to-end.",
+      fr: "Monorepo Turborepo propulsant SalaireClair (simulateur brut-net pour 4 pays, 1 600+ impressions Google/jour) et PrêtClair (simulateur de prêt immobilier — live) — design system partagé, utils partagées, solo de A à Z.",
     },
     category: "personal",
     role: {
@@ -172,7 +171,7 @@ export const projects: Project[] = [
         "Monorepo architecture: 2 apps + 3 shared packages (@clairlab/design-system, @clairlab/utils, @clairlab/tsconfig) — adding an app = reuse DS + utils.",
         "Extracted shared design system: 27 UI components + AppHeader/AppFooter shells, themed per-app via OKLch tokens (orange SalaireClair, blue PrêtClair).",
         "SalaireClair: salary engine covering 4 countries × 4 statuses with bidirectional calculation (gross→net and net→gross), 38 MDX blog articles, 1 600+ daily Google impressions.",
-        "PrêtClair (WIP — live): mortgage payment simulator, PTZ 2026 simulator, borrowing capacity calculator, rate comparator, and SEO blog.",
+        "PrêtClair: mortgage payment simulator, PTZ 2026 simulator, borrowing capacity calculator, rate comparator, and SEO blog.",
         "221 unit tests green, Lighthouse 100/100/100/100, TypeScript strict (zero any, zero as), Zod validation at boundaries.",
         "CI pipeline with Turbo cache: lint + type-check + test + build in parallel across all apps and packages.",
         "70+ PRs — solo end-to-end (architecture → design system → dev → SEO → content).",
@@ -181,7 +180,7 @@ export const projects: Project[] = [
         "Architecture monorepo : 2 apps + 3 packages partagés (@clairlab/design-system, @clairlab/utils, @clairlab/tsconfig) — ajouter une app = réutiliser le DS + utils.",
         "Design system partagé extrait : 27 composants UI + shells AppHeader/AppFooter, thème par app via tokens OKLch (orange SalaireClair, bleu PrêtClair).",
         "SalaireClair : moteur de calcul couvrant 4 pays × 4 statuts avec calcul bidirectionnel (brut→net et net→brut), 38 articles MDX SEO, 1 600+ impressions Google/jour.",
-        "PrêtClair (WIP — live) : simulateur de mensualités de prêt immobilier, simulateur PTZ 2026, capacité d'emprunt, comparateur de taux et blog SEO.",
+        "PrêtClair : simulateur de mensualités de prêt immobilier, simulateur PTZ 2026, capacité d'emprunt, comparateur de taux et blog SEO.",
         "221 tests unitaires green, Lighthouse 100/100/100/100, TypeScript strict (zéro any, zéro as), validation Zod aux frontières.",
         "CI pipeline avec Turbo cache : lint + type-check + test + build en parallèle sur toutes les apps et packages.",
         "70+ PRs — solo end-to-end (architecture → design system → dev → SEO → contenu).",
@@ -192,187 +191,11 @@ export const projects: Project[] = [
     links: {
       live: [
         { label: "SalaireClair", url: "https://salaireclair.fr/" },
-        { label: "PrêtClair (WIP)", url: "https://pretclair.fr/" },
+        { label: "PrêtClair", url: "https://pretclair.fr/" },
       ],
       repo: "https://github.com/decuyperanthony/clairlab",
     },
   },
-  {
-    slug: "calendar-du-duck",
-    title: "Calendar du Duck",
-    oneLiner: {
-      en: "Mobile-first PWA for co-parents to manage shared custody, kids' activities, school schedules, and handoff checklists — built to solve a real-life coordination problem.",
-      fr: "PWA mobile-first pour co-parents : garde alternée, activités des enfants, emplois du temps scolaires et checklists de passation — conçue pour résoudre un vrai problème de coordination.",
-    },
-    category: "personal",
-    role: {
-      en: "Solo Creator — design, development, deployment",
-      fr: "Créateur Solo — design, développement, déploiement",
-    },
-    timeframe: "2026",
-    stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "shadcn/ui", "Radix", "next-intl", "React Hook Form", "Zod", "PWA"],
-    highlights: {
-      en: [
-        "Custody calculator based on ISO week parity — deterministic, no backend needed.",
-        "Disney+-inspired dark purple theme with glassmorphism effects and teal/purple dual-accent system.",
-        "Env-based personalization: all family names and images configurable via environment variables — reusable for any family.",
-        "Offline-first PWA installable on iOS/Android with native splash screens.",
-      ],
-      fr: [
-        "Calculateur de garde basé sur la parité des semaines ISO — déterministe, aucun backend nécessaire.",
-        "Thème violet foncé inspiré de Disney+ avec effets de glassmorphism et système dual-accent teal/violet.",
-        "Personnalisation par variables d'environnement : noms et images configurables — réutilisable pour toute famille.",
-        "PWA offline-first installable sur iOS/Android avec splash screens natifs.",
-      ],
-    },
-    access: "public",
-    accessNote: null,
-    links: {
-      live: null,
-      repo: "https://github.com/decuyperanthony/calendar-du-duck",
-    },
-  },
-  {
-    slug: "clear",
-    title: "Clear",
-    oneLiner: {
-      en: "Mental clarity todo app with drag & drop, smart categories, badges, dashboard, REST API for external integrations (ChatGPT, Siri), and offline PWA — Disney+-inspired glassmorphism UI.",
-      fr: "Todo app \"mental clarity\" avec drag & drop, catégories intelligentes, badges, dashboard, API REST pour intégrations externes (ChatGPT, Siri) et PWA offline — UI glassmorphism inspirée Disney+.",
-    },
-    category: "personal",
-    role: {
-      en: "Solo Creator — full-stack, design, API, deployment",
-      fr: "Créateur Solo — full-stack, design, API, déploiement",
-    },
-    timeframe: "2026",
-    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Neon PostgreSQL", "Drizzle ORM", "@dnd-kit", "Zod", "next-intl", "PWA"],
-    highlights: {
-      en: [
-        "Drag & drop reordering with @dnd-kit (touch + pointer), category pinning via long-press (500ms).",
-        "Secure REST API with SHA-256 hashed Bearer tokens for external integrations (ChatGPT Custom GPT, Siri Shortcuts, Claude).",
-        "Offline-first with IndexedDB fallback and automatic sync when back online.",
-        "Gamification badges system and dashboard with stats and insights.",
-      ],
-      fr: [
-        "Réorganisation drag & drop avec @dnd-kit (touch + pointeur), épinglage de catégorie par appui long (500ms).",
-        "API REST sécurisée avec tokens Bearer hashés SHA-256 pour intégrations externes (ChatGPT Custom GPT, Siri Shortcuts, Claude).",
-        "Offline-first avec fallback IndexedDB et synchronisation automatique au retour en ligne.",
-        "Système de badges de gamification et dashboard avec statistiques et insights.",
-      ],
-    },
-    access: "public",
-    accessNote: null,
-    links: {
-      live: null,
-      repo: "https://github.com/decuyperanthony/clear",
-    },
-  },
-  {
-    slug: "bank-account-du-duck",
-    title: "Bank Account du Duck",
-    oneLiner: {
-      en: "Recurring bank debits tracker — subscriptions, rent, loans, taxes — with category stats, calendar view, and offline PWA support.",
-      fr: "Gestionnaire de prélèvements bancaires récurrents — abonnements, loyer, crédits, impôts — avec stats par catégorie, vue calendrier et PWA offline.",
-    },
-    category: "personal",
-    role: {
-      en: "Solo Creator — full-stack, design, deployment",
-      fr: "Créateur Solo — full-stack, design, déploiement",
-    },
-    timeframe: "2026",
-    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "Neon PostgreSQL", "Drizzle ORM", "Supabase Auth", "Radix UI", "PWA"],
-    highlights: {
-      en: [
-        "Dashboard splitting debits into \"upcoming\" vs \"already debited\" with real-time monthly totals.",
-        "Calendar view with color-coded debit day indicators and month navigation — auto-filters expired loans.",
-        "Expense breakdown by 9 categories (telecom, housing, streaming, insurance, transport, loan, tax, income, other) with amounts and percentages.",
-        "Supabase Auth (email/password) with route protection middleware and offline-first IndexedDB sync.",
-      ],
-      fr: [
-        "Dashboard séparant les prélèvements \"à venir\" vs \"déjà débités\" avec totaux mensuels en temps réel.",
-        "Vue calendrier avec indicateurs colorés par jour de prélèvement et navigation mensuelle — filtre auto les crédits expirés.",
-        "Répartition des dépenses par 9 catégories (telecom, logement, streaming, assurance, transport, crédit, impôt, revenu, autre) avec montants et pourcentages.",
-        "Auth Supabase (email/mot de passe) avec middleware de protection des routes et synchronisation IndexedDB offline-first.",
-      ],
-    },
-    access: "public",
-    accessNote: null,
-    links: {
-      live: null,
-      repo: "https://github.com/decuyperanthony/bank-account-du-duck",
-    },
-  },
-  {
-    slug: "duck-shopping",
-    title: "Duck Shopping",
-    oneLiner: {
-      en: "AI-powered offline-first shopping list — type in natural language, Claude or ChatGPT auto-parses items with category, quantity, and notes. Bidirectional sync with PostgreSQL.",
-      fr: "Liste de courses offline-first propulsée par IA — saisie en langage naturel, Claude ou ChatGPT parse automatiquement les articles avec catégorie, quantité et notes. Sync bidirectionnelle avec PostgreSQL.",
-    },
-    category: "personal",
-    role: {
-      en: "Solo Creator — full-stack, AI integration, deployment",
-      fr: "Créateur Solo — full-stack, intégration IA, déploiement",
-    },
-    timeframe: "2026",
-    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "Radix UI", "Neon PostgreSQL", "Drizzle ORM", "Anthropic Claude", "OpenAI GPT-4o-mini", "IndexedDB", "PWA"],
-    highlights: {
-      en: [
-        "Dual AI provider support (Claude + ChatGPT) with automatic fallback — plus a 600-line rule-based local parser for fully offline usage.",
-        "Offline-first architecture: IndexedDB for instant optimistic UI, background sync to PostgreSQL (30s interval + instant on reconnect).",
-        "12 French grocery categories with automatic sorting by store section for efficient shopping trips.",
-        "Reusable templates system to save and reload frequently used shopping lists.",
-      ],
-      fr: [
-        "Support dual IA (Claude + ChatGPT) avec fallback automatique — plus un parser local rule-based de 600 lignes pour usage 100% offline.",
-        "Architecture offline-first : IndexedDB pour UI optimiste instantanée, sync arrière-plan vers PostgreSQL (intervalle 30s + instant au retour en ligne).",
-        "12 catégories de courses françaises avec tri automatique par rayon pour des courses efficaces.",
-        "Système de templates réutilisables pour sauvegarder et recharger les listes de courses fréquentes.",
-      ],
-    },
-    access: "public",
-    accessNote: null,
-    links: {
-      live: null,
-      repo: "https://github.com/decuyperanthony/duck-shopping",
-    },
-  },
-  {
-    slug: "duck-ui",
-    title: "Duck UI",
-    oneLiner: {
-      en: "Personal React component library — dark purple theme, glassmorphism, type-safe icons, 97 tests, 20+ Storybook stories. Shared across 3 apps via pnpm add.",
-      fr: "Bibliothèque de composants React personnelle — thème violet foncé, glassmorphism, icônes type-safe, 97 tests, 20+ stories Storybook. Partagée entre 3 apps via pnpm add.",
-    },
-    category: "personal",
-    role: {
-      en: "Solo Creator — design system, testing, documentation",
-      fr: "Créateur Solo — design system, tests, documentation",
-    },
-    timeframe: "2026",
-    stack: ["React 18", "TypeScript", "Tailwind CSS 3.4", "CVA", "Storybook 8", "Vitest", "Testing Library", "Vite", "Lucide React"],
-    highlights: {
-      en: [
-        "8 components (Card, Typography, Button, Badge, Alert, Icon, BottomNav, Separator) with CVA variant management.",
-        "Type-safe icon system: 55+ Lucide icons with registry pattern and full TypeScript autocomplete.",
-        "Props-over-composition API: Card takes title/description/badge as props instead of nested sub-components.",
-        "97 unit tests, 20+ interactive Storybook stories, Vite library build (ES + CJS + types).",
-      ],
-      fr: [
-        "8 composants (Card, Typography, Button, Badge, Alert, Icon, BottomNav, Separator) avec gestion de variantes CVA.",
-        "Système d'icônes type-safe : 55+ icônes Lucide avec pattern registry et autocomplétion TypeScript complète.",
-        "API props-over-composition : Card prend title/description/badge en props au lieu de sous-composants imbriqués.",
-        "97 tests unitaires, 20+ stories Storybook interactives, build Vite en mode library (ES + CJS + types).",
-      ],
-    },
-    access: "public",
-    accessNote: null,
-    links: {
-      live: [{ label: "Storybook", url: "https://duck-ui.vercel.app" }],
-      repo: "https://github.com/decuyperanthony/duck-ui",
-    },
-  },
-  // === CURRENT / FLAGSHIP ===
   {
     slug: "polyseme-v2",
     title: "POLYSEME V2",
@@ -412,7 +235,41 @@ export const projects: Project[] = [
     },
     links: { live: null, repo: null },
   },
-  // === 2024 ===
+  {
+    slug: "calendar-du-duck",
+    title: "Calendar du Duck",
+    oneLiner: {
+      en: "Mobile-first PWA for co-parents to manage shared custody, kids' activities, school schedules, and handoff checklists — built to solve a real-life coordination problem.",
+      fr: "PWA mobile-first pour co-parents : garde alternée, activités des enfants, emplois du temps scolaires et checklists de passation — conçue pour résoudre un vrai problème de coordination.",
+    },
+    category: "personal",
+    role: {
+      en: "Solo Creator — design, development, deployment",
+      fr: "Créateur Solo — design, développement, déploiement",
+    },
+    timeframe: "2025",
+    stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "shadcn/ui", "Radix", "next-intl", "React Hook Form", "Zod", "PWA"],
+    highlights: {
+      en: [
+        "Custody calculator based on ISO week parity — deterministic, no backend needed.",
+        "Disney+-inspired dark purple theme with glassmorphism effects and teal/purple dual-accent system.",
+        "Env-based personalization: all family names and images configurable via environment variables — reusable for any family.",
+        "Offline-first PWA installable on iOS/Android with native splash screens.",
+      ],
+      fr: [
+        "Calculateur de garde basé sur la parité des semaines ISO — déterministe, aucun backend nécessaire.",
+        "Thème violet foncé inspiré de Disney+ avec effets de glassmorphism et système dual-accent teal/violet.",
+        "Personnalisation par variables d'environnement : noms et images configurables — réutilisable pour toute famille.",
+        "PWA offline-first installable sur iOS/Android avec splash screens natifs.",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: {
+      live: null,
+      repo: "https://github.com/decuyperanthony/calendar-du-duck",
+    },
+  },
   {
     slug: "generali-fonds-miroirs",
     title: "Generali Module Fonds Miroirs",
@@ -447,6 +304,41 @@ export const projects: Project[] = [
     links: { live: null, repo: null },
   },
   {
+    slug: "clear",
+    title: "Clear",
+    oneLiner: {
+      en: "Mental clarity todo app with drag & drop, smart categories, badges, dashboard, REST API for external integrations (ChatGPT, Siri), and offline PWA — Disney+-inspired glassmorphism UI.",
+      fr: "Todo app \"mental clarity\" avec drag & drop, catégories intelligentes, badges, dashboard, API REST pour intégrations externes (ChatGPT, Siri) et PWA offline — UI glassmorphism inspirée Disney+.",
+    },
+    category: "personal",
+    role: {
+      en: "Solo Creator — full-stack, design, API, deployment",
+      fr: "Créateur Solo — full-stack, design, API, déploiement",
+    },
+    timeframe: "2025",
+    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Neon PostgreSQL", "Drizzle ORM", "@dnd-kit", "Zod", "next-intl", "PWA"],
+    highlights: {
+      en: [
+        "Drag & drop reordering with @dnd-kit (touch + pointer), category pinning via long-press (500ms).",
+        "Secure REST API with SHA-256 hashed Bearer tokens for external integrations (ChatGPT Custom GPT, Siri Shortcuts, Claude).",
+        "Offline-first with IndexedDB fallback and automatic sync when back online.",
+        "Gamification badges system and dashboard with stats and insights.",
+      ],
+      fr: [
+        "Réorganisation drag & drop avec @dnd-kit (touch + pointeur), épinglage de catégorie par appui long (500ms).",
+        "API REST sécurisée avec tokens Bearer hashés SHA-256 pour intégrations externes (ChatGPT Custom GPT, Siri Shortcuts, Claude).",
+        "Offline-first avec fallback IndexedDB et synchronisation automatique au retour en ligne.",
+        "Système de badges de gamification et dashboard avec statistiques et insights.",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: {
+      live: null,
+      repo: "https://github.com/decuyperanthony/clear",
+    },
+  },
+  {
     slug: "boat-manager",
     title: "Boat Manager",
     oneLiner: {
@@ -475,6 +367,41 @@ export const projects: Project[] = [
     access: "public",
     accessNote: null,
     links: { live: [{ label: "Boat Manager", url: "https://dev.boatmanager.io/" }], repo: null },
+  },
+  {
+    slug: "duck-shopping",
+    title: "Duck Shopping",
+    oneLiner: {
+      en: "AI-powered offline-first shopping list — type in natural language, Claude or ChatGPT auto-parses items with category, quantity, and notes. Bidirectional sync with PostgreSQL.",
+      fr: "Liste de courses offline-first propulsée par IA — saisie en langage naturel, Claude ou ChatGPT parse automatiquement les articles avec catégorie, quantité et notes. Sync bidirectionnelle avec PostgreSQL.",
+    },
+    category: "personal",
+    role: {
+      en: "Solo Creator — full-stack, AI integration, deployment",
+      fr: "Créateur Solo — full-stack, intégration IA, déploiement",
+    },
+    timeframe: "2025",
+    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "Radix UI", "Neon PostgreSQL", "Drizzle ORM", "Anthropic Claude", "OpenAI GPT-4o-mini", "IndexedDB", "PWA"],
+    highlights: {
+      en: [
+        "Dual AI provider support (Claude + ChatGPT) with automatic fallback — plus a 600-line rule-based local parser for fully offline usage.",
+        "Offline-first architecture: IndexedDB for instant optimistic UI, background sync to PostgreSQL (30s interval + instant on reconnect).",
+        "12 French grocery categories with automatic sorting by store section for efficient shopping trips.",
+        "Reusable templates system to save and reload frequently used shopping lists.",
+      ],
+      fr: [
+        "Support dual IA (Claude + ChatGPT) avec fallback automatique — plus un parser local rule-based de 600 lignes pour usage 100% offline.",
+        "Architecture offline-first : IndexedDB pour UI optimiste instantanée, sync arrière-plan vers PostgreSQL (intervalle 30s + instant au retour en ligne).",
+        "12 catégories de courses françaises avec tri automatique par rayon pour des courses efficaces.",
+        "Système de templates réutilisables pour sauvegarder et recharger les listes de courses fréquentes.",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: {
+      live: null,
+      repo: "https://github.com/decuyperanthony/duck-shopping",
+    },
   },
   {
     slug: "dealbreaker",
@@ -508,6 +435,76 @@ export const projects: Project[] = [
       fr: "Outil conseiller — authentification requise",
     },
     links: { live: null, repo: null },
+  },
+  {
+    slug: "bank-account-du-duck",
+    title: "Bank Account du Duck",
+    oneLiner: {
+      en: "Recurring bank debits tracker — subscriptions, rent, loans, taxes — with category stats, calendar view, and offline PWA support.",
+      fr: "Gestionnaire de prélèvements bancaires récurrents — abonnements, loyer, crédits, impôts — avec stats par catégorie, vue calendrier et PWA offline.",
+    },
+    category: "personal",
+    role: {
+      en: "Solo Creator — full-stack, design, deployment",
+      fr: "Créateur Solo — full-stack, design, déploiement",
+    },
+    timeframe: "2024",
+    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "Neon PostgreSQL", "Drizzle ORM", "Supabase Auth", "Radix UI", "PWA"],
+    highlights: {
+      en: [
+        "Dashboard splitting debits into \"upcoming\" vs \"already debited\" with real-time monthly totals.",
+        "Calendar view with color-coded debit day indicators and month navigation — auto-filters expired loans.",
+        "Expense breakdown by 9 categories (telecom, housing, streaming, insurance, transport, loan, tax, income, other) with amounts and percentages.",
+        "Supabase Auth (email/password) with route protection middleware and offline-first IndexedDB sync.",
+      ],
+      fr: [
+        "Dashboard séparant les prélèvements \"à venir\" vs \"déjà débités\" avec totaux mensuels en temps réel.",
+        "Vue calendrier avec indicateurs colorés par jour de prélèvement et navigation mensuelle — filtre auto les crédits expirés.",
+        "Répartition des dépenses par 9 catégories (telecom, logement, streaming, assurance, transport, crédit, impôt, revenu, autre) avec montants et pourcentages.",
+        "Auth Supabase (email/mot de passe) avec middleware de protection des routes et synchronisation IndexedDB offline-first.",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: {
+      live: null,
+      repo: "https://github.com/decuyperanthony/bank-account-du-duck",
+    },
+  },
+  {
+    slug: "duck-ui",
+    title: "Duck UI",
+    oneLiner: {
+      en: "Personal React component library — dark purple theme, glassmorphism, type-safe icons, 97 tests, 20+ Storybook stories. Shared across 3 apps via pnpm add.",
+      fr: "Bibliothèque de composants React personnelle — thème violet foncé, glassmorphism, icônes type-safe, 97 tests, 20+ stories Storybook. Partagée entre 3 apps via pnpm add.",
+    },
+    category: "personal",
+    role: {
+      en: "Solo Creator — design system, testing, documentation",
+      fr: "Créateur Solo — design system, tests, documentation",
+    },
+    timeframe: "2024",
+    stack: ["React 18", "TypeScript", "Tailwind CSS 3.4", "CVA", "Storybook 8", "Vitest", "Testing Library", "Vite", "Lucide React"],
+    highlights: {
+      en: [
+        "8 components (Card, Typography, Button, Badge, Alert, Icon, BottomNav, Separator) with CVA variant management.",
+        "Type-safe icon system: 55+ Lucide icons with registry pattern and full TypeScript autocomplete.",
+        "Props-over-composition API: Card takes title/description/badge as props instead of nested sub-components.",
+        "97 unit tests, 20+ interactive Storybook stories, Vite library build (ES + CJS + types).",
+      ],
+      fr: [
+        "8 composants (Card, Typography, Button, Badge, Alert, Icon, BottomNav, Separator) avec gestion de variantes CVA.",
+        "Système d'icônes type-safe : 55+ icônes Lucide avec pattern registry et autocomplétion TypeScript complète.",
+        "API props-over-composition : Card prend title/description/badge en props au lieu de sous-composants imbriqués.",
+        "97 tests unitaires, 20+ stories Storybook interactives, build Vite en mode library (ES + CJS + types).",
+      ],
+    },
+    access: "public",
+    accessNote: null,
+    links: {
+      live: [{ label: "Storybook", url: "https://ds-duck-ui.vercel.app/" }],
+      repo: "https://github.com/decuyperanthony/duck-ui",
+    },
   },
   {
     slug: "salva-subscription-funnel",
@@ -674,7 +671,6 @@ export const projects: Project[] = [
     },
     links: { live: null, repo: null },
   },
-  // === 2022 ===
   {
     slug: "self-care-subscription-funnel",
     title: "Self-care Subscription Funnel",
@@ -768,7 +764,6 @@ export const projects: Project[] = [
     accessNote: null,
     links: { live: null, repo: null },
   },
-  // === OLDER PROJECTS ===
   {
     slug: "polyseme-v1",
     title: "POLYSEME V1",
