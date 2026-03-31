@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
@@ -40,25 +41,34 @@ const nameContainer = staggerContainer(0.06, 0.15);
 export const Hero = () => {
   const { t } = useI18n();
   const prefersReducedMotion = useReducedMotion();
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   // Split the name into words for the staggered reveal
   const nameWords = t.meta.name.split(" ");
+
+  // SSR: render visible content immediately (no initial="hidden")
+  // Client: animate in after hydration
+  const shouldAnimate = hasMounted && !prefersReducedMotion;
 
   return (
     <section className="py-10 sm:py-16 lg:py-24">
       <motion.div
         className="space-y-6"
         variants={heroVariants}
-        initial="hidden"
+        initial={shouldAnimate ? "hidden" : false}
         animate="visible"
       >
-        <motion.div variants={lineVariant}>
+        <motion.div variants={shouldAnimate ? lineVariant : undefined}>
           <Typography variant="muted">{t.hero.greeting}</Typography>
         </motion.div>
 
         {/* Cinematic name reveal — each word wipes up from a clipping mask */}
-        <motion.div variants={lineVariant} aria-label={t.meta.name}>
-          {prefersReducedMotion ? (
+        <motion.div variants={shouldAnimate ? lineVariant : undefined}>
+          {prefersReducedMotion || !shouldAnimate ? (
             <Typography variant="h1" as="h1" className="sm:text-5xl lg:text-6xl">
               {t.meta.name}
             </Typography>
@@ -90,13 +100,13 @@ export const Hero = () => {
           )}
         </motion.div>
 
-        <motion.div variants={lineVariant}>
+        <motion.div variants={shouldAnimate ? lineVariant : undefined}>
           <Typography variant="lead" className="sm:text-2xl">
             {t.meta.role} &mdash; {t.meta.tagline}
           </Typography>
         </motion.div>
 
-        <motion.div variants={lineVariant}>
+        <motion.div variants={shouldAnimate ? lineVariant : undefined}>
           <Typography variant="body-large" className="max-w-2xl">
             {t.hero.description}
           </Typography>
@@ -104,7 +114,7 @@ export const Hero = () => {
 
         <motion.div
           className="flex flex-wrap gap-4 pt-4"
-          variants={lineVariant}
+          variants={shouldAnimate ? lineVariant : undefined}
         >
           <MagneticButton>
             <Button asChild>

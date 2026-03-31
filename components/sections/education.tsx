@@ -18,13 +18,13 @@ export const Education = () => {
     return (
       <section className="space-y-8 py-10 sm:space-y-12 sm:py-16">
         <div className="space-y-6 sm:space-y-8">
-          <Typography variant="h3" as="h2">
+          <Typography variant="h3" as="h3">
             {t.cv.education}
           </Typography>
           <ul className="space-y-6">
             {education.map((item, index) => (
               <li key={index} className="space-y-1">
-                <Typography variant="body-large" as="h3" className="font-semibold">
+                <Typography variant="body-large" as="h4" className="font-semibold">
                   {item.institution}
                 </Typography>
                 <Typography variant="body">{item.degree[locale]}</Typography>
@@ -36,7 +36,7 @@ export const Education = () => {
           </ul>
         </div>
         <div className="space-y-6">
-          <Typography variant="h3" as="h2">
+          <Typography variant="h3" as="h3">
             {t.cv.languages}
           </Typography>
           <ul className="space-y-2">
@@ -61,7 +61,7 @@ export const Education = () => {
     <section className="space-y-8 py-10 sm:space-y-12 sm:py-16">
       <div className="space-y-6 sm:space-y-8">
         <ScrollReveal>
-          <Typography variant="h3" as="h2">
+          <Typography variant="h3" as="h3">
             {t.cv.education}
           </Typography>
         </ScrollReveal>
@@ -75,7 +75,7 @@ export const Education = () => {
         >
           {education.map((item, index) => (
             <motion.li key={index} className="space-y-1" variants={fadeInUp}>
-              <Typography variant="body-large" as="h3" className="font-semibold">
+              <Typography variant="body-large" as="h4" className="font-semibold">
                 {item.institution}
               </Typography>
               <Typography variant="body">{item.degree[locale]}</Typography>
@@ -89,7 +89,7 @@ export const Education = () => {
 
       <div className="space-y-6">
         <ScrollReveal>
-          <Typography variant="h3" as="h2">
+          <Typography variant="h3" as="h3">
             {t.cv.languages}
           </Typography>
         </ScrollReveal>

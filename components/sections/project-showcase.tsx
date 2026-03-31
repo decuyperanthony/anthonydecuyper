@@ -132,12 +132,13 @@ export const ProjectShowcase = ({
 
         {/* Image section */}
         {hasImages ? (
-          <div className="relative aspect-video w-full overflow-hidden bg-black/20">
+          <div className="relative aspect-video w-full overflow-hidden bg-black/20" aria-live="polite">
             {/* Image */}
             <Image
               src={images[currentImageIndex]}
               alt={`${title} screenshot ${currentImageIndex + 1}`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
             />
 
@@ -149,14 +150,14 @@ export const ProjectShowcase = ({
               <>
                 <button
                   onClick={prevImage}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white/80 opacity-0 backdrop-blur-sm transition-all hover:bg-black/70 hover:text-white group-hover:opacity-100 focus-visible:opacity-100"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-1.5 text-white opacity-0 backdrop-blur-sm transition-all hover:bg-black/70 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-white"
                   aria-label="Previous image"
                 >
                   <ChevronLeft className="size-4" aria-hidden="true" />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-1.5 text-white/80 opacity-0 backdrop-blur-sm transition-all hover:bg-black/70 hover:text-white group-hover:opacity-100 focus-visible:opacity-100"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-1.5 text-white opacity-0 backdrop-blur-sm transition-all hover:bg-black/70 group-hover:opacity-100 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-white"
                   aria-label="Next image"
                 >
                   <ChevronRight className="size-4" aria-hidden="true" />
@@ -175,10 +176,10 @@ export const ProjectShowcase = ({
                       setCurrentImageIndex(idx);
                     }}
                     className={cn(
-                      "size-1.5 rounded-full transition-all focus-visible:opacity-100",
+                      "size-1.5 rounded-full transition-all focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-white",
                       idx === currentImageIndex
                         ? "w-4 bg-white"
-                        : "bg-white/40 hover:bg-white/60"
+                        : "bg-white/60 hover:bg-white/80"
                     )}
                     aria-label={`Go to image ${idx + 1}`}
                   />
