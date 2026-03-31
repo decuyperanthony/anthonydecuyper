@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
@@ -41,11 +41,11 @@ const nameContainer = staggerContainer(0.06, 0.15);
 export const Hero = () => {
   const { t } = useI18n();
   const prefersReducedMotion = useReducedMotion();
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
+  const hasMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   // Split the name into words for the staggered reveal
   const nameWords = t.meta.name.split(" ");
