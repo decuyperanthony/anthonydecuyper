@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 
 import { ThemeProvider } from "@/components/theme-provider";
@@ -64,12 +65,16 @@ export const viewport: Viewport = {
   ],
 };
 
-const RootLayout = ({
+const RootLayout = async ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) => (
-  <html lang="en" suppressHydrationWarning>
+}>) => {
+  const headersList = await headers();
+  const locale = headersList.get("x-locale") ?? "en";
+
+  return (
+  <html lang={locale} suppressHydrationWarning>
     <body className={`${inter.variable} font-sans antialiased`}>
       <ThemeProvider>
         <I18nProvider>
@@ -78,6 +83,7 @@ const RootLayout = ({
       </ThemeProvider>
     </body>
   </html>
-);
+  );
+};
 
 export default RootLayout;
