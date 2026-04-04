@@ -91,11 +91,13 @@ export const I18nProvider = ({ children }: I18nProviderProps) => {
 
   const setLocale = useCallback((newLocale: Locale) => {
     localStorage.setItem(STORAGE_KEY, newLocale);
+    document.cookie = `preferred-locale=${newLocale};path=/;max-age=31536000;SameSite=Lax`;
     window.dispatchEvent(new Event("storage"));
   }, []);
 
   useEffect(() => {
     document.documentElement.lang = locale;
+    document.cookie = `preferred-locale=${locale};path=/;max-age=31536000;SameSite=Lax`;
   }, [locale]);
 
   const value: I18nContextType = {

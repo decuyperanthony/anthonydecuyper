@@ -25,7 +25,7 @@
 - **Internationalization** — English & French with localStorage persistence
 - **PWA** — installable on mobile with offline support
 - **Print-friendly CV** — dedicated `/cv` page optimized for print
-- **Framer Motion animations** — premium micro-interactions and page transitions
+- **CSS animations** — smooth micro-interactions and page transitions
 - **WCAG 2.1 AA compliant** — accessible by design
 - **SEO optimized** — dynamic sitemap, meta tags, structured data
 - **Responsive** — mobile-first design
@@ -40,7 +40,7 @@
 | **Language** | TypeScript (strict mode) |
 | **Styling** | [Tailwind CSS v4](https://tailwindcss.com/) + CSS variables (OKLCH) |
 | **Components** | [shadcn/ui](https://ui.shadcn.com/) + [Radix UI](https://radix-ui.com/) |
-| **Animations** | [Framer Motion](https://www.framer.com/motion/) |
+| **Animations** | CSS transitions + keyframes |
 | **Icons** | [Lucide React](https://lucide.dev/) |
 | **Theme** | [next-themes](https://github.com/pacocoursey/next-themes) |
 | **PWA** | [@ducanh2912/next-pwa](https://github.com/nicedayzhu/next-pwa) |
@@ -75,6 +75,19 @@ content/
 ├── en.json             # English translations
 └── fr.json             # French translations
 ```
+
+---
+
+## Featured Project — ClairLab
+
+This portfolio showcases [**ClairLab**](https://github.com/decuyperanthony/clairlab), a Turborepo monorepo powering 2 financial simulator apps:
+
+| App | Description | URL |
+|-----|-------------|-----|
+| **SalaireClair** | Gross-to-net salary simulator (FR, BE, CH, LU) | [salaireclair.fr](https://salaireclair.fr) |
+| **PrêtClair** | Mortgage loan simulator (FR) | [pretclair.fr](https://pretclair.fr) |
+
+**Highlights:** 47 shared UI components, 249 unit tests, Lighthouse 100/100/100/100, 63 SEO blog articles, 120+ PRs, automated SEO monitoring (GSC + Umami → Slack).
 
 ---
 

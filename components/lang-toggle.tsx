@@ -18,7 +18,7 @@ export const LangToggle = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" aria-label="Select language">
-          <Languages className="size-5" />
+          <Languages className="size-5" aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -26,6 +26,7 @@ export const LangToggle = () => {
           <DropdownMenuItem key={loc} onClick={() => setLocale(loc)}>
             <Check
               className={locale === loc ? "opacity-100" : "opacity-0"}
+              aria-hidden="true"
             />
             {LOCALE_LABELS[loc]}
           </DropdownMenuItem>
